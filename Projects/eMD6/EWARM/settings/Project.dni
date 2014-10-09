@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=1185979052
+Checksum=603151798
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -78,12 +78,11 @@ Count=0
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
-Count=0
-SuppressDialog=0
+A0=_ "../mpl/compass_vec_cal.c" ""
+A1=_ "../mpl/fusion_9axis.c" ""
+Count=2
+SuppressDialog=1
 [CallStackLog]
 Enabled=0
 [DriverProfiling]
@@ -92,3 +91,6 @@ Mode=3
 Graph=0
 Symbiont=0
 Exclusions=
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
