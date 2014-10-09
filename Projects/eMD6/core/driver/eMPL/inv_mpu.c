@@ -725,16 +725,7 @@ int mpu_init(struct int_param_s *int_param)
     if (i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, data))
         return -1;
 
-   st.chip_cfg.accel_half = 0;
-
-#ifdef MPU6500
-    /* MPU6500 shares 4kB of memory between the DMP and the FIFO. Since the
-     * first 3kB are needed by the DMP, we'll use the last 1kB for the FIFO.
-     */
-    data[0] = BIT_FIFO_SIZE_1024 | 0x8;
-    if (i2c_write(st.hw->addr, st.reg->accel_cfg2, 1, data))
-        return -1;
-#endif
+    st.chip_cfg.accel_half = 0;
 
     /* Set to invalid values to ensure no I2C writes are skipped. */
     st.chip_cfg.sensors = 0xFF;
@@ -744,6 +735,8 @@ int mpu_init(struct int_param_s *int_param)
     st.chip_cfg.sample_rate = 0xFFFF;
     st.chip_cfg.fifo_enable = 0xFF;
     st.chip_cfg.bypass_mode = 0xFF;
+    
+    /* todo: what is this?*/
 #ifdef AK89xx_SECONDARY
     st.chip_cfg.compass_sample_rate = 0xFFFF;
 #endif
@@ -769,11 +762,6 @@ int mpu_init(struct int_param_s *int_param)
         return -1;
     if (mpu_configure_fifo(0))
         return -1;
-
-#ifndef EMPL_TARGET_STM32L    
-    if (int_param)
-        reg_int_cb(int_param);
-#endif
 
 #ifdef AK89xx_SECONDARY
     setup_compass();
