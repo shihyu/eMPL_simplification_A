@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-475745760
+Checksum=909866632
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -35,7 +35,7 @@ ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [stlink]
-stlinkserialNo=D3980414
+stlinkserialNo=2798FD0D
 stlinkfoundProbes=
 [CodeCoverage]
 Enabled=_ 0
