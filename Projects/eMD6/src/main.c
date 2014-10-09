@@ -144,8 +144,8 @@ void data_builder_init(unsigned char accel_range,
                        unsigned short gyro_range);
 
 inv_error_t MPL_libraries_init(void);
-
-
+void hal_variable_init(void);
+void motion_processor_init(void);
 
 
 void  RCC_Configuration(void);
@@ -752,14 +752,251 @@ int main(void)
                        gyro_sampling_rate,
                        gyro_range);
     
+    hal_variable_init();
     
+     /* Compass reads are handled by scheduler. */
+    stm32l_get_clock_ms(&timestamp);
     
+    motion_processor_init();
+  
+    while(1)
+    {
+      
+         unsigned long sensor_timestamp;
+    int new_data = 0;
+    if (USART_GetITStatus(USART1, USART_IT_RXNE)) {
+        /* A byte has been received via USART. See handle_input for a list of
+         * valid commands.
+         */
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+        handle_input();
+    }
+    stm32l_get_clock_ms(&timestamp);
+
+#ifdef COMPASS_ENABLED
+        /* We're not using a data ready interrupt for the compass, so we'll
+         * make our compass reads timer-based instead.
+         */
+        if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
+            hal.new_gyro && (hal.sensors & COMPASS_ON)) {
+            hal.next_compass_ms = timestamp + COMPASS_READ_MS;
+            new_compass = 1;
+        }
+#endif
+        /* Temperature data doesn't need to be read with every gyro sample.
+         * Let's make them timer-based like the compass reads.
+         */
+        if (timestamp > hal.next_temp_ms) {
+            hal.next_temp_ms = timestamp + TEMP_READ_MS;
+            new_temp = 1;
+        }
+
+    if (hal.motion_int_mode) {
+        /* Enable motion interrupt. */
+        mpu_lp_motion_interrupt(500, 1, 5);
+        /* Notify the MPL that contiguity was broken. */
+        inv_accel_was_turned_off();
+        inv_gyro_was_turned_off();
+        inv_compass_was_turned_off();
+        inv_quaternion_sensor_was_turned_off();
+        /* Wait for the MPU interrupt. */
+        while (!hal.new_gyro) {}
+        /* Restore the previous sensor configuration. */
+        mpu_lp_motion_interrupt(0, 0, 0);
+        hal.motion_int_mode = 0;
+    }
+
+    if (!hal.sensors || !hal.new_gyro) {
+        continue;
+    }    
+
+        if (hal.new_gyro && hal.lp_accel_mode) {
+            short accel_short[3];
+            long accel[3];
+            mpu_get_accel_reg(accel_short, &sensor_timestamp);
+            accel[0] = (long)accel_short[0];
+            accel[1] = (long)accel_short[1];
+            accel[2] = (long)accel_short[2];
+            inv_build_accel(accel, 0, sensor_timestamp);
+            new_data = 1;
+            hal.new_gyro = 0;
+        } else if (hal.new_gyro && hal.dmp_on) {
+            short gyro[3], accel_short[3], sensors;
+            unsigned char more;
+            long accel[3], quat[4], temperature;
+            /* This function gets new data from the FIFO when the DMP is in
+             * use. The FIFO can contain any combination of gyro, accel,
+             * quaternion, and gesture data. The sensors parameter tells the
+             * caller which data fields were actually populated with new data.
+             * For example, if sensors == (INV_XYZ_GYRO | INV_WXYZ_QUAT), then
+             * the FIFO isn't being filled with accel data.
+             * The driver parses the gesture data to determine if a gesture
+             * event has occurred; on an event, the application will be notified
+             * via a callback (assuming that a callback function was properly
+             * registered). The more parameter is non-zero if there are
+             * leftover packets in the FIFO.
+             */
+            dmp_read_fifo(gyro, accel_short, quat, &sensor_timestamp, &sensors, &more);
+            if (!more)
+                hal.new_gyro = 0;
+            if (sensors & INV_XYZ_GYRO) {
+                /* Push the new data to the MPL. */
+                inv_build_gyro(gyro, sensor_timestamp);
+                new_data = 1;
+                if (new_temp) {
+                    new_temp = 0;
+                    /* Temperature only used for gyro temp comp. */
+                    mpu_get_temperature(&temperature, &sensor_timestamp);
+                    inv_build_temp(temperature, sensor_timestamp);
+                }
+            }
+            if (sensors & INV_XYZ_ACCEL) {
+                accel[0] = (long)accel_short[0];
+                accel[1] = (long)accel_short[1];
+                accel[2] = (long)accel_short[2];
+                inv_build_accel(accel, 0, sensor_timestamp);
+                new_data = 1;
+            }
+            if (sensors & INV_WXYZ_QUAT) {
+                inv_build_quat(quat, 0, sensor_timestamp);
+                new_data = 1;
+            }
+        } else if (hal.new_gyro) {
+            short gyro[3], accel_short[3];
+            unsigned char sensors, more;
+            long accel[3], temperature;
+            /* This function gets new data from the FIFO. The FIFO can contain
+             * gyro, accel, both, or neither. The sensors parameter tells the
+             * caller which data fields were actually populated with new data.
+             * For example, if sensors == INV_XYZ_GYRO, then the FIFO isn't
+             * being filled with accel data. The more parameter is non-zero if
+             * there are leftover packets in the FIFO. The HAL can use this
+             * information to increase the frequency at which this function is
+             * called.
+             */
+            hal.new_gyro = 0;
+            mpu_read_fifo(gyro, accel_short, &sensor_timestamp,
+                &sensors, &more);
+            if (more)
+                hal.new_gyro = 1;
+            if (sensors & INV_XYZ_GYRO) {
+                /* Push the new data to the MPL. */
+                inv_build_gyro(gyro, sensor_timestamp);
+                new_data = 1;
+                if (new_temp) {
+                    new_temp = 0;
+                    /* Temperature only used for gyro temp comp. */
+                    mpu_get_temperature(&temperature, &sensor_timestamp);
+                    inv_build_temp(temperature, sensor_timestamp);
+                }
+            }
+            if (sensors & INV_XYZ_ACCEL) {
+                accel[0] = (long)accel_short[0];
+                accel[1] = (long)accel_short[1];
+                accel[2] = (long)accel_short[2];
+                inv_build_accel(accel, 0, sensor_timestamp);
+                new_data = 1;
+            }
+        }
+#ifdef COMPASS_ENABLED
+        if (new_compass) {
+            short compass_short[3];
+            long compass[3];
+            new_compass = 0;
+            /* For any MPU device with an AKM on the auxiliary I2C bus, the raw
+             * magnetometer registers are copied to special gyro registers.
+             */
+            if (!mpu_get_compass_reg(compass_short, &sensor_timestamp)) {
+                compass[0] = (long)compass_short[0];
+                compass[1] = (long)compass_short[1];
+                compass[2] = (long)compass_short[2];
+                /* NOTE: If using a third-party compass calibration library,
+                 * pass in the compass data in uT * 2^16 and set the second
+                 * parameter to INV_CALIBRATED | acc, where acc is the
+                 * accuracy from 0 to 3.
+                 */
+                inv_build_compass(compass, 0, sensor_timestamp);
+            }
+            new_data = 1;
+        }
+#endif
+        if (new_data) {
+            inv_execute_on_data();
+            /* This function reads bias-compensated sensor data and sensor
+             * fusion outputs from the MPL. The outputs are formatted as seen
+             * in eMPL_outputs.c. This function only needs to be called at the
+             * rate requested by the host.
+             */
+            read_from_mpl();
+        }
+        
+        
+    }
+  
+  
   MPL_LOGE(" -> OK\n"); 
 }
 
 /*---------------------------------------------------------------------------*/
 
-  
+void motion_processor_init(void)
+{
+   /* To initialize the DMP:
+     * 1. Call dmp_load_motion_driver_firmware(). This pushes the DMP image in
+     *    inv_mpu_dmp_motion_driver.h into the MPU memory.
+     * 2. Push the gyro and accel orientation matrix to the DMP.
+     * 3. Register gesture callbacks. Don't worry, these callbacks won't be
+     *    executed unless the corresponding feature is enabled.
+     * 4. Call dmp_enable_feature(mask) to enable different features.
+     * 5. Call dmp_set_fifo_rate(freq) to select a DMP output rate.
+     * 6. Call any feature-specific control functions.
+     *
+     * To enable the DMP, just call mpu_set_dmp_state(1). This function can
+     * be called repeatedly to enable and disable the DMP at runtime.
+     *
+     * The following is a short summary of the features supported in the DMP
+     * image provided in inv_mpu_dmp_motion_driver.c:
+     * DMP_FEATURE_LP_QUAT: Generate a gyro-only quaternion on the DMP at
+     * 200Hz. Integrating the gyro data at higher rates reduces numerical
+     * errors (compared to integration on the MCU at a lower sampling rate).
+     * DMP_FEATURE_6X_LP_QUAT: Generate a gyro/accel quaternion on the DMP at
+     * 200Hz. Cannot be used in combination with DMP_FEATURE_LP_QUAT.
+     * DMP_FEATURE_TAP: Detect taps along the X, Y, and Z axes.
+     * DMP_FEATURE_ANDROID_ORIENT: Google's screen rotation algorithm. Triggers
+     * an event at the four orientations where the screen should rotate.
+     * DMP_FEATURE_GYRO_CAL: Calibrates the gyro data after eight seconds of
+     * no motion.
+     * DMP_FEATURE_SEND_RAW_ACCEL: Add raw accelerometer data to the FIFO.
+     * DMP_FEATURE_SEND_RAW_GYRO: Add raw gyro data to the FIFO.
+     * DMP_FEATURE_SEND_CAL_GYRO: Add calibrated gyro data to the FIFO. Cannot
+     * be used in combination with DMP_FEATURE_SEND_RAW_GYRO.
+     */
+    dmp_load_motion_driver_firmware();
+    dmp_set_orientation(
+        inv_orientation_matrix_to_scalar(gyro_pdata.orientation));
+    dmp_register_tap_cb(tap_cb);
+    dmp_register_android_orient_cb(android_orient_cb);
+    /*
+     * Known Bug -
+     * DMP when enabled will sample sensor data at 200Hz and output to FIFO at the rate
+     * specified in the dmp_set_fifo_rate API. The DMP will then sent an interrupt once
+     * a sample has been put into the FIFO. Therefore if the dmp_set_fifo_rate is at 25Hz
+     * there will be a 25Hz interrupt from the MPU device.
+     *
+     * There is a known issue in which if you do not enable DMP_FEATURE_TAP
+     * then the interrupts will be at 200Hz even if fifo rate
+     * is set at a different rate. To avoid this issue include the DMP_FEATURE_TAP
+     *
+     * DMP sensor fusion works only with gyro at +-2000dps and accel +-2G
+     */
+    hal.dmp_features = DMP_FEATURE_6X_LP_QUAT | DMP_FEATURE_TAP |
+        DMP_FEATURE_ANDROID_ORIENT | DMP_FEATURE_SEND_RAW_ACCEL | DMP_FEATURE_SEND_CAL_GYRO |
+        DMP_FEATURE_GYRO_CAL;
+    dmp_enable_feature(hal.dmp_features);
+    dmp_set_fifo_rate(DEFAULT_MPU_HZ);
+    mpu_set_dmp_state(1);
+    hal.dmp_on = 1;
+}
 
 inv_error_t MPL_libraries_init(void)
 {
@@ -895,6 +1132,26 @@ void data_builder_init(unsigned char accel_range,
     
 }
 
+void hal_variable_init(void)
+{
+  
+
+    /* Initialize HAL state variables. */
+#ifdef COMPASS_ENABLED
+    hal.sensors = ACCEL_ON | GYRO_ON | COMPASS_ON;
+#else
+    hal.sensors = ACCEL_ON | GYRO_ON;
+#endif
+    hal.dmp_on = 0;
+    hal.report = 0;
+    hal.rx.cmd = 0;
+    hal.next_pedo_ms = 0;
+    hal.next_compass_ms = 0;
+    hal.next_temp_ms = 0;
+    
+}
+    
+    
 /**
  * Configure the hardware of the Discovery board to link with the MPU
  */
