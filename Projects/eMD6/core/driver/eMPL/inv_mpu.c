@@ -736,7 +736,7 @@ int mpu_init(struct int_param_s *int_param)
     st.chip_cfg.fifo_enable = 0xFF;
     st.chip_cfg.bypass_mode = 0xFF;
     
-    /* todo: what is this?*/
+
 #ifdef AK89xx_SECONDARY
     st.chip_cfg.compass_sample_rate = 0xFFFF;
 #endif
