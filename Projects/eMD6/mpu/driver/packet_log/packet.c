@@ -26,8 +26,24 @@
 
 #include "packet.h"
 #include "log.h"
-#include "stm32l1xx.h"
-#include "uart.h"
+
+
+
+
+#if defined USE_MPU_CONFIG_FILE
+
+#include "mpu_config.h"
+  
+#define min(a,b)        mpu_config_min(a,b)
+#define fputchar        mpu_config_fputchar
+        
+          
+ 
+#else
+#error  Gyro driver is missing the system layer implementations.
+#endif
+
+
 
 #define BUF_SIZE        (256)
 #define PACKET_LENGTH   (23)
@@ -89,13 +105,10 @@ int _MLPrintLog (int priority, const char* tag, const char* fmt, ...)
     out[21] = '\r';
     out[22] = '\n';
     for (ii = 0; ii < length; ii += (PACKET_LENGTH-5)) {
-#define min(a,b) ((a < b) ? a : b)
         this_length = min(length-ii, PACKET_LENGTH-5);
         memset(out+3, 0, 18);
         memcpy(out+3, buf+ii, this_length);
         for (i=0; i<PACKET_LENGTH; i++) {
-          //USART_SendData(USART1, out[i]);
-          //printf("%c", out[i]);
           fputchar(out[i]);
         }
     }
@@ -135,8 +148,6 @@ void eMPL_send_quat(long *quat)
     out[22] = '\n';
     
     for (i=0; i<PACKET_LENGTH; i++) {
-       //USART_SendData(USART1, out[i]);
-      //printf("%c", out[i]);
       fputchar(out[i]);
     }
 }
@@ -210,8 +221,6 @@ void eMPL_send_data(unsigned char type, long *data)
         return;
     }
     for (i=0; i<PACKET_LENGTH; i++) {
-       //USART_SendData(USART1, out[i]);
-      //printf("%c", out[i]);
       fputchar(out[i]);
     }
 }

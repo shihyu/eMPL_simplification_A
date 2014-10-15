@@ -10,23 +10,25 @@ C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\peripheral
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\driver\include
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\mpu_config
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\driver\eMPL
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\mpl
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\driver\stm32l
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\driver\include
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\mllite
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\driver\eMPL
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\mpl
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\driver\packet_log
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\core\eMPL-hal
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\mllite
+-I
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu\eMPL-hal
+-I
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\mpu_int
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\inc
--I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\EWARM\..\..\..\Utilities\STM32L-DISCOVERY
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -I
@@ -42,23 +44,25 @@ C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\peripheral
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\driver\include
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\mpu_config
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\driver\eMPL
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\mpl
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\driver\stm32l
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\driver\include
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\mllite
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\driver\eMPL
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\mpl
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\driver\packet_log
 -I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\core\eMPL-hal
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\mllite
+-I
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu\eMPL-hal
+-I
+C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6\mpu_int
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx
 -I
 C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Libraries\STM32L1xx_StdPeriph_Driver\inc
--I
-C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Utilities\STM32L-DISCOVERY
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -DUSE_STDPERIPH_DRIVER=1
@@ -68,6 +72,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -DEMPL=1
 -DMPU9250=1
 -DEMPL_TARGET_STM32L=1
+-DUSE_MPU_CONFIG_FILE=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -259,8 +264,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=594176
 -D_GOANNA=1
--D__DATE__="Oct 14 2014"
--D__TIME__="15:39:32"
+-D__DATE__="Oct 15 2014"
+-D__TIME__="14:26:56"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

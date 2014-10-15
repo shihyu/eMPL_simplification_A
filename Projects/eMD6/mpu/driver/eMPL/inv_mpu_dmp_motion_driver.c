@@ -32,13 +32,13 @@
  * delay_ms(unsigned long num_ms)
  * get_ms(unsigned long *count)
  */
-#if defined EMPL_TARGET_STM32L
-#include "i2c.h"   
-#include "main.h"
+#if defined USE_MPU_CONFIG_FILE
+
+#include "mpu_config.h"
    
-#define i2c_write   Sensors_I2C_WriteRegister_swap
-#define i2c_read    Sensors_I2C_ReadRegister_swap  
-#define get_ms      stm32l_get_clock_ms
+#define i2c_write   mpu_config_i2c_write 
+#define i2c_read    mpu_config_i2c_read  
+#define get_ms      mpu_config_get_ms
 
 #elif defined MOTION_DRIVER_TARGET_MSP430
 #include "msp430.h"

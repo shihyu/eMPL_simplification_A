@@ -1,13 +1,6 @@
-/**
- *   @defgroup  eMPL
- *   @brief     Embedded Motion Processing Library
- *
- *   @{
- *       @file      mllite_test.c
- *       @brief     Test app for eMPL using the Motion Driver DMP image.
- */
- 
+
 /* Includes ------------------------------------------------------------------*/
+
 #include "stm32l1xx.h"
 #include "stdio.h"
 #include "discover_board.h"
@@ -16,7 +9,7 @@
 #include "i2c.h"
 #include "gpio.h"
 #include "main.h"
-    
+
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
 #include "invensense.h"
@@ -26,19 +19,10 @@
 #include "mpu.h"
 #include "log.h"
 #include "packet.h"
-/* Private typedef -----------------------------------------------------------*/
-/* Data read from MPL. */
-#define PRINT_ACCEL     (0x01)
-#define PRINT_GYRO      (0x02)
-#define PRINT_QUAT      (0x04)
-#define PRINT_COMPASS   (0x08)
-#define PRINT_EULER     (0x10)
-#define PRINT_ROT_MAT   (0x20)
-#define PRINT_HEADING   (0x40)
-#define PRINT_PEDO      (0x80)
-#define PRINT_LINEAR_ACCEL (0x100)
 
-volatile uint32_t hal_timestamp = 0;
+
+/* Private typedef -----------------------------------------------------------*/
+
 #define ACCEL_ON        (0x01)
 #define GYRO_ON         (0x02)
 #define COMPASS_ON      (0x04)
@@ -47,14 +31,11 @@ volatile uint32_t hal_timestamp = 0;
 #define NO_MOTION       (1)
 
 /* Starting sampling rate. */
+
 #define DEFAULT_MPU_HZ  (100)
-
-#define FLASH_SIZE      (512)
-#define FLASH_MEM_START ((void*)0x1800)
-
-#define PEDO_READ_MS    (1000)
 #define TEMP_READ_MS    (500)
 #define COMPASS_READ_MS (100)
+
 struct rx_s {
     unsigned char header[3];
     unsigned char cmd;
@@ -76,10 +57,6 @@ struct hal_s {
 };
 static struct hal_s hal = {0};
 
-/* USB RX binary semaphore. Actually, it's just a flag. Not included in struct
- * because it's declared extern elsewhere.
- */
-volatile unsigned char rx_new;
 
 unsigned char *mpl_key = (unsigned char*)"eMPL 5.1";
 
@@ -126,11 +103,10 @@ static struct platform_data_s compass_pdata = {
 
 
 /* Private define ------------------------------------------------------------*/
-
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-static volatile uint32_t TimingDelay;
-RCC_ClocksTypeDef RCC_Clocks;
+
+
 
 /* Private function prototypes -----------------------------------------------*/
 void MPU_hardware_init(unsigned char * accel_range,  
@@ -336,16 +312,11 @@ int main(void)
 /*---------------------------------------------------------------------------*/
 void my_read_from_mpl(void)
 {
-    long msg, data[9];
+    long data[9];
     int8_t accuracy;
     unsigned long timestamp;
-    float float_data[3] = {0};
 
     if (inv_get_sensor_type_quat(data, &accuracy, (inv_time_t*)&timestamp)) {
-       /* Sends a quaternion packet to the PC. Since this is used by the Python
-        * test app to visually represent a 3D quaternion, it's sent each time
-        * the MPL has new data.
-        */
         eMPL_send_quat(data);
     }
 }
@@ -581,6 +552,7 @@ void hal_variable_init(void)
  */
 void platform_init(void)
 {
+  RCC_ClocksTypeDef RCC_Clocks;
    /*!< At this stage the microcontroller clock setting is already configured, 
        this is done through SystemInit() function which is called from startup
        file (startup_stm32l1xx_md.s) before to branch to application main.
@@ -672,46 +644,6 @@ void  Init_GPIOs (void)
 }  
 
 
-/**
-  * @brief  Inserts a delay time.
-  * @param  nTime: specifies the delay time length, in 10 ms.
-  * @retval None
-  */
-void Delay(uint32_t nTime)
-{
-  TimingDelay = nTime;
-
-  while(TimingDelay != 0);
-  
-}
-
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void)
-{
-
-  if (TimingDelay != 0x00)
-  { 
-    TimingDelay--;
-  }
-
-}
-
-void TimeStamp_Increment(void)
-{
-  hal_timestamp++;
-}
-
-int stm32l_get_clock_ms(unsigned long *count)
-{
-    if (!count)
-        return 1;
-    count[0] = hal_timestamp;
-    return 0;
-}
 
 #ifdef  USE_FULL_ASSERT
 

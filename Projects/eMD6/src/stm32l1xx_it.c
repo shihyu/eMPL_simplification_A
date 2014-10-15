@@ -23,8 +23,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l1xx_it.h"
+#include "app_config.h"
 #include "main.h"
-
 /** @addtogroup Template_Project
   * @{
   */

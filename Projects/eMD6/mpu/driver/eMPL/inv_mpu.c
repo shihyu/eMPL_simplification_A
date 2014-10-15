@@ -36,18 +36,17 @@
  * fabsf(float x)
  * min(int a, int b)
  */
-#if defined EMPL_TARGET_STM32L
-#include "i2c.h"   
-#include "main.h"
-#include "log.h"
+#if defined USE_MPU_CONFIG_FILE
+
+#include "mpu_config.h"
    
-#define i2c_write   Sensors_I2C_WriteRegister_swap //Sensors_I2C_WriteRegister
-#define i2c_read    Sensors_I2C_ReadRegister_swap  
-#define delay_ms    Delay
-#define get_ms      stm32l_get_clock_ms
-#define log_i       MPL_LOGI
-#define log_e       MPL_LOGE
-#define min(a,b) ((a<b)?a:b)
+#define i2c_write   mpu_config_i2c_write 
+#define i2c_read    mpu_config_i2c_read  
+#define delay_ms    mpu_config_delay_ms
+#define get_ms      mpu_config_get_ms
+#define log_i       mpu_config_log_i
+#define log_e       mpu_config_log_e
+#define min(a,b)    mpu_config_min(a,b)
    
 #elif defined MOTION_DRIVER_TARGET_MSP430
 #include "msp430.h"
