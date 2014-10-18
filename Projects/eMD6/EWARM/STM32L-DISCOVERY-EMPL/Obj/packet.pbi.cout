@@ -272,6 +272,9 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__TIME__="14:26:33"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv

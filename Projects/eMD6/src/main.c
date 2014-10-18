@@ -33,8 +33,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define PRINT_ACCEL     1
 =======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
@@ -89,7 +92,10 @@ static struct platform_data_s gyro_pdata = {
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
@@ -158,6 +164,7 @@ void MPU_hardware_init(unsigned char * accel_range,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 void my_read_from_mpl(void);
 void RCC_Configuration(void);
 void hardware_init(void);
@@ -205,11 +212,26 @@ void hal_variable_init(void);
 void motion_processor_init(void);
 
 void my_read_from_mpl(void);
+=======
+void data_builder_init(unsigned char accel_range,  
+                       unsigned short compass_range,
+                       unsigned short gyro_sampling_rate,
+                       unsigned short gyro_range);
+
+inv_error_t MPL_libraries_init(void);
+void hal_variable_init(void);
+void motion_processor_init(void);
+
+void my_read_from_mpl(void);
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 void  RCC_Configuration(void);
 void  Init_GPIOs (void);
 void Delay(uint32_t nTime);
 void platform_init(void);
 int stm32l_get_clock_ms(unsigned long *count);
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 /* Global flags --------------------------------------------------------------*/
@@ -229,10 +251,13 @@ int main(void)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     platform_init();
     
     if (0u != mpu_int_sensor_init()) 
 =======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
@@ -255,6 +280,7 @@ int main(void)
      
     result = mpu_init(&int_param);
     if (result) 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
@@ -288,10 +314,19 @@ int main(void)
     if (0u == mpu_int_dmp_setup()) 
 =======
 =======
+=======
     {
         MPL_LOGE("Could not initialize hardware.\n");
     }
     
+    result = MPL_libraries_init();
+    if (result) 
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+    {
+        MPL_LOGE("Could not initialize hardware.\n");
+    }
+    
+<<<<<<< HEAD
     result = MPL_libraries_init();
     if (result) 
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
@@ -339,6 +374,21 @@ int main(void)
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    
+    MPU_hardware_init(&accel_range,  
+                       &compass_range,
+                       &gyro_sampling_rate,
+                       &gyro_range);
+    
+    
+    data_builder_init(accel_range,  
+                       compass_range,
+                       gyro_sampling_rate,
+                       gyro_range);
+    
+    hal_variable_init();
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     
     data_builder_init(accel_range,  
                        compass_range,
@@ -347,6 +397,7 @@ int main(void)
 <<<<<<< HEAD
 =======
     
+<<<<<<< HEAD
     hal_variable_init();
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     
@@ -361,6 +412,11 @@ int main(void)
 =======
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     motion_processor_init();
+=======
+    motion_processor_init();
+      
+      MPL_LOGE(" -> OK\n"); 
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 =======
     motion_processor_init();
       
@@ -576,10 +632,147 @@ void motion_processor_init(void)
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 inv_error_t MPL_libraries_init(void)
 =======
 =======
+=======
+
+inv_error_t MPL_libraries_init(void)
+{
+  inv_error_t result = 0;
+  
+    result = inv_init_mpl();
+    if (result) {
+        MPL_LOGE("Could not initialize MPL.\n");
+    }
+    
+    inv_enable_quaternion();
+    inv_enable_9x_sensor_fusion();
+      
+    /* The MPL expects compass data at a constant rate (matching the rate
+    * passed to inv_set_compass_sample_rate). If this is an issue for your
+    * application, call this function, and the MPL will depend on the
+    * timestamps passed to inv_build_compass instead.
+    *
+    * inv_9x_fusion_use_timestamps(1);
+    */
+
+     /* Update gyro biases when not in motion.
+     * WARNING: These algorithms are mutually exclusive.
+     */
+    inv_enable_fast_nomot();
+    /* inv_enable_motion_no_motion(); */
+    /* inv_set_no_motion_time(1000); */
+    
+    /* Update gyro biases when temperature changes. */
+    inv_enable_gyro_tc();
+
+    /* This algorithm updates the accel biases when in motion. A more accurate
+    * bias measurement can be made when running the self-test (see case 't' in
+    * handle_input), but this algorithm can be enabled if the self-test can't
+    * be executed in your application.
+    *
+    * inv_enable_in_use_auto_calibration();
+    */
+    
+    #ifdef COMPASS_ENABLED
+    /* Compass calibration algorithms. */
+    inv_enable_vector_compass_cal();
+    inv_enable_magnetic_disturbance();
+#endif
+    /* If you need to estimate your heading before the compass is calibrated,
+     * enable this algorithm. It becomes useless after a good figure-eight is
+     * detected, so we'll just leave it out to save memory.
+     * inv_enable_heading_from_gyro();
+     */
+
+    /* Allows use of the MPL APIs in read_from_mpl. */
+    inv_enable_eMPL_outputs();
+
+    result = inv_start_mpl();
+    if (result == INV_ERROR_NOT_AUTHORIZED) {
+        while (1) {
+            MPL_LOGE("Not authorized.\n");
+        }
+    }
+    if (result) {
+        MPL_LOGE("Could not start the MPL.\n");
+    }
+    
+    return result;
+}
+
+void MPU_hardware_init(unsigned char * accel_range,  
+                       unsigned short * compass_range,
+                       unsigned short * gyro_sampling_rate,
+                       unsigned short * gyro_range)
+{
+  
+    /* Get/set hardware configuration. Start gyro. */
+    /* Wake up all sensors. */
+#ifdef COMPASS_ENABLED
+    mpu_set_sensors(INV_XYZ_GYRO | INV_XYZ_ACCEL | INV_XYZ_COMPASS);
+#else
+    mpu_set_sensors(INV_XYZ_GYRO | INV_XYZ_ACCEL);
+#endif
+     /* Push both gyro and accel data into the FIFO. */
+    mpu_configure_fifo(INV_XYZ_GYRO | INV_XYZ_ACCEL);
+    mpu_set_sample_rate(DEFAULT_MPU_HZ);
+#ifdef COMPASS_ENABLED
+    /* The compass sampling rate can be less than the gyro/accel sampling rate.
+     * Use this function for proper power management.
+     */
+    mpu_set_compass_sample_rate(1000 / COMPASS_READ_MS);
+#endif
+    /* Read back configuration in case it was set improperly. */
+    mpu_get_sample_rate(gyro_sampling_rate);
+    mpu_get_gyro_fsr(gyro_range);
+    mpu_get_accel_fsr(accel_range);
+#ifdef COMPASS_ENABLED
+    mpu_get_compass_fsr(compass_range);
+#endif
+   
+    
+}
+
+void data_builder_init(unsigned char accel_range,  
+                       unsigned short compass_range,
+                       unsigned short gyro_sampling_rate,
+                       unsigned short gyro_range)
+{
+ 
+  
+     /* Sync driver configuration with MPL. */
+    /* Sample rate expected in microseconds. */
+    inv_set_gyro_sample_rate(1000000L / gyro_sampling_rate);
+    inv_set_accel_sample_rate(1000000L / gyro_sampling_rate);
+#ifdef COMPASS_ENABLED
+    /* The compass rate is independent of the gyro and accel rates. As long as
+     * inv_set_compass_sample_rate is called with the correct value, the 9-axis
+     * fusion algorithm's compass correction gain will work properly.
+     */
+    inv_set_compass_sample_rate(COMPASS_READ_MS * 1000L);
+#endif
+    /* Set chip-to-body orientation matrix.
+     * Set hardware units to dps/g's/degrees scaling factor.
+     */
+    inv_set_gyro_orientation_and_scale(
+            inv_orientation_matrix_to_scalar(gyro_pdata.orientation),
+            (long)gyro_range<<15);
+    inv_set_accel_orientation_and_scale(
+            inv_orientation_matrix_to_scalar(gyro_pdata.orientation),
+            (long)accel_range<<15);
+#ifdef COMPASS_ENABLED
+    inv_set_compass_orientation_and_scale(
+            inv_orientation_matrix_to_scalar(compass_pdata.orientation),
+            (long)compass_range<<15);
+#endif
+    
+    
+}
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 inv_error_t MPL_libraries_init(void)
 {
