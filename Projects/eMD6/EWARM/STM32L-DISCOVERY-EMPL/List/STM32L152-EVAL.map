@@ -1,6 +1,18 @@
 ###############################################################################
 #
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 # IAR ELF Linker V7.30.1.7746/W32 for ARM                 19/Oct/2014  00:13:24
+=======
+# IAR ELF Linker V7.30.1.7746/W32 for ARM                 15/Oct/2014  14:26:30
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+# IAR ELF Linker V7.30.1.7746/W32 for ARM                 15/Oct/2014  14:26:30
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+# IAR ELF Linker V7.30.1.7746/W32 for ARM                 15/Oct/2014  14:26:30
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 # Copyright 2007-2014 IAR Systems AB.
 #
 #    Output file  =  
@@ -102,7 +114,19 @@ __dlib_dynamic_initialization = normal
   .intvec                 ro code  0x08000000    0xf4  startup_stm32l1xx_md.o [1]
                                  - 0x080000f4    0xf4
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 "P1":                                          0xe267
+=======
+"P1":                                          0xe0cb
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+"P1":                                          0xe0cb
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+"P1":                                          0xe0cb
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
   .text                   ro code  0x080000f4  0x1530  inv_mpu.o [1]
   .text                   ro code  0x08001624   0x6c2  i2c_stm32l1.o [1]
   .text                   ro code  0x08001ce6    0x22  zero_init3.o [6]
@@ -222,6 +246,9 @@ __dlib_dynamic_initialization = normal
   .text.inv_normalize_quat
                           ro code  0x0800b204    0xec  quaternion_supervisor.o [4]
   .text.inv_generate_gyro_quaternion
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                           ro code  0x0800b2f0   0x128  quaternion_supervisor.o [4]
   .text.inv_gtc_data_cb   ro code  0x0800b418   0x44c  gyro_tc.o [4]
   .text                   ro code  0x0800b864     0xc  memmove.o [6]
@@ -416,13 +443,257 @@ __dlib_dynamic_initialization = normal
                                  - 0x0800e35b  0xe267
 
 "P2":                                          0x1850
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                          ro code  0x0800b180   0x128  quaternion_supervisor.o [4]
+  .text                   ro code  0x0800b2a8   0x480  main.o [1]
+  .text                   ro code  0x0800b728   0x18c  eMPL_outputs.o [1]
+  .text                   ro code  0x0800b8b4    0xb0  mpl.o [1]
+  .text.inv_enable_quaternion
+                          ro code  0x0800b964    0x18  quaternion_supervisor.o [4]
+  .text.inv_enable_9x_sensor_fusion
+                          ro code  0x0800b97c    0x24  fusion_9axis.o [4]
+  .text.inv_enable_fast_nomot
+                          ro code  0x0800b9a0    0x18  fast_no_motion.o [4]
+  .text.inv_enable_gyro_tc
+                          ro code  0x0800b9b8    0x40  gyro_tc.o [4]
+  .text.inv_enable_vector_compass_cal
+                          ro code  0x0800b9f8    0x18  compass_vec_cal.o [4]
+  .text.inv_enable_magnetic_disturbance
+                          ro code  0x0800ba10    0x2c  mag_disturb.o [4]
+  .text                   ro code  0x0800ba3c    0x3c  stm32l1xx_pwr.o [1]
+  .text                   ro code  0x0800ba78    0x8c  gpio.o [1]
+  .text.inv_init_quaternion
+                          ro code  0x0800bb04    0x24  quaternion_supervisor.o [4]
+  .text.inv_init_9x_fusion
+                          ro code  0x0800bb28    0x3c  fusion_9axis.o [4]
+  .text.inv_init_fast_nomot
+                          ro code  0x0800bb64    0x64  fast_no_motion.o [4]
+  .text.inv_init_gyro_ts  ro code  0x0800bbc8    0x38  gyro_tc.o [4]
+  .text.inv_init_vector_compass_cal
+                          ro code  0x0800bc00    0x6c  compass_vec_cal.o [4]
+  .text.inv_init_magnetic_disturbance
+                          ro code  0x0800bc6c    0x4c  mag_disturb.o [4]
+  .text                   ro code  0x0800bcb8    0x54  stm32l1xx_syscfg.o [1]
+  .text                   ro code  0x0800bd0c    0xa4  stm32l1xx_exti.o [1]
+  .text                   ro code  0x0800bdb0    0x78  misc.o [1]
+  .text.inv_init_maxmin   ro code  0x0800be28    0x6c  fast_no_motion.o [4]
+  .text.inv_set_default_number_of_samples
+                          ro code  0x0800be94    0x3c  fast_no_motion.o [4]
+  .text.inv_init_check_sample_balance_parameter
+=======
+                          ro code  0x0800b180   0x128  quaternion_supervisor.o [4]
+  .text                   ro code  0x0800b2a8   0x480  main.o [1]
+  .text                   ro code  0x0800b728   0x18c  eMPL_outputs.o [1]
+  .text                   ro code  0x0800b8b4    0xb0  mpl.o [1]
+  .text.inv_enable_quaternion
+                          ro code  0x0800b964    0x18  quaternion_supervisor.o [4]
+  .text.inv_enable_9x_sensor_fusion
+                          ro code  0x0800b97c    0x24  fusion_9axis.o [4]
+  .text.inv_enable_fast_nomot
+                          ro code  0x0800b9a0    0x18  fast_no_motion.o [4]
+  .text.inv_enable_gyro_tc
+                          ro code  0x0800b9b8    0x40  gyro_tc.o [4]
+  .text.inv_enable_vector_compass_cal
+                          ro code  0x0800b9f8    0x18  compass_vec_cal.o [4]
+  .text.inv_enable_magnetic_disturbance
+                          ro code  0x0800ba10    0x2c  mag_disturb.o [4]
+  .text                   ro code  0x0800ba3c    0x3c  stm32l1xx_pwr.o [1]
+  .text                   ro code  0x0800ba78    0x8c  gpio.o [1]
+  .text.inv_init_quaternion
+                          ro code  0x0800bb04    0x24  quaternion_supervisor.o [4]
+  .text.inv_init_9x_fusion
+                          ro code  0x0800bb28    0x3c  fusion_9axis.o [4]
+  .text.inv_init_fast_nomot
+                          ro code  0x0800bb64    0x64  fast_no_motion.o [4]
+  .text.inv_init_gyro_ts  ro code  0x0800bbc8    0x38  gyro_tc.o [4]
+  .text.inv_init_vector_compass_cal
+                          ro code  0x0800bc00    0x6c  compass_vec_cal.o [4]
+  .text.inv_init_magnetic_disturbance
+                          ro code  0x0800bc6c    0x4c  mag_disturb.o [4]
+  .text                   ro code  0x0800bcb8    0x54  stm32l1xx_syscfg.o [1]
+  .text                   ro code  0x0800bd0c    0xa4  stm32l1xx_exti.o [1]
+  .text                   ro code  0x0800bdb0    0x78  misc.o [1]
+  .text.inv_init_maxmin   ro code  0x0800be28    0x6c  fast_no_motion.o [4]
+  .text.inv_set_default_number_of_samples
+                          ro code  0x0800be94    0x3c  fast_no_motion.o [4]
+  .text.inv_init_check_sample_balance_parameter
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                          ro code  0x0800bed0    0x28  accel_auto_cal.o [4]
+  .text.inv_gtc_data_cb   ro code  0x0800bef8   0x44c  gyro_tc.o [4]
+  .text                   ro code  0x0800c344     0xc  memmove.o [6]
+  .text                   ro code  0x0800c350    0x78  ABImemmove_unaligned.o [6]
+  .text.inv_perform_9x_fusion
+                          ro code  0x0800c3c8   0x39c  fusion_9axis.o [4]
+  .text.inv_gtc_store     ro code  0x0800c764    0x34  gyro_tc.o [4]
+  .text.inv_filter_correction_angle
+                          ro code  0x0800c798   0x1f0  fusion_9axis.o [4]
+  .text.inv_get_magnetic_disturbance_state
+                          ro code  0x0800c988     0xc  mag_disturb.o [4]
+  .text.inv_generate_fast_nomot
+                          ro code  0x0800c994   0x350  fast_no_motion.o [4]
+  .text.inv_sensor_data_preprocess
+                          ro code  0x0800cce4    0x9c  fast_no_motion.o [4]
+  .text.inv_detect_motion_by_gyro_accel
+                          ro code  0x0800cd80   0x134  fast_no_motion.o [4]
+  .text.inv_reset_packet  ro code  0x0800ceb4    0x2c  fast_no_motion.o [4]
+  .text.inv_fast_nomot_set_gyro_bias
+                          ro code  0x0800cee0    0xcc  fast_no_motion.o [4]
+  .text.inv_reset_min_max_gyro_accel_statistics
+                          ro code  0x0800cfac    0x34  fast_no_motion.o [4]
+  .text.inv_fast_nomot_store_data_compass
+                          ro code  0x0800cfe0    0x44  fast_no_motion.o [4]
+  .text.inv_fast_nomot_store_data
+                          ro code  0x0800d024    0xb0  fast_no_motion.o [4]
+  .text.inv_fast_nomot_parameter
+                          ro code  0x0800d0d4   0x170  fast_no_motion.o [4]
+  .text                   ro code  0x0800d244    0x62  I64ToFlt.o [5]
+  .text                   ro code  0x0800d2a8    0x76  FltToS64.o [5]
+  .text.inv_check_magnetic_disturbance
+                          ro code  0x0800d320   0x30c  mag_disturb.o [4]
+  .text.Mag3ofNormalizedLong
+                          ro code  0x0800d62c    0x58  mag_disturb.o [4]
+  .text                   ro code  0x0800d684    0xa8  acosf.o [5]
+  .text.ComputeAngleVelocity
+                          ro code  0x0800d72c    0x54  mag_disturb.o [4]
+  .text.MagDisturbCheckSettling
+                          ro code  0x0800d780    0x48  mag_disturb.o [4]
+  .text.MagDisturbSetDisturbance
+                          ro code  0x0800d7c8    0x78  mag_disturb.o [4]
+  .text.inv_track_dip_angle
+                          ro code  0x0800d840    0x9c  mag_disturb.o [4]
+  .text                   ro code  0x0800d8dc   0x140  system_stm32l1xx.o [1]
+  .text                   ro code  0x0800da1c    0xd2  packbits_init.o [6]
+  .text                   ro code  0x0800daee     0x6  abort.o [3]
+  .text                   ro code  0x0800daf4    0x14  exit.o [7]
+  .text.inv_generate_vector_compass_cal
+                          ro code  0x0800db08    0xa8  compass_vec_cal.o [4]
+  .text.inv_process_9x_sensor_fusion_cb
+                          ro code  0x0800dbb0    0x98  fusion_9axis.o [4]
+  .rodata                 const    0x0800dc48    0x88  mpl.o [1]
+  .text.inv_generate_quaternion
+                          ro code  0x0800dcd0    0x58  quaternion_supervisor.o [4]
+  .text.inv_start_fast_nomot
+                          ro code  0x0800dd28    0x40  fast_no_motion.o [4]
+  .text.inv_magnetic_disturbance_process
+                          ro code  0x0800dd68    0x38  mag_disturb.o [4]
+  .rodata                 const    0x0800dda0    0x30  inv_mpu.o [1]
+  .text                   ro code  0x0800ddd0    0x30  stm32l1xx_it.o [1]
+  .text.inv_start_quaternion
+                          ro code  0x0800de00    0x30  quaternion_supervisor.o [4]
+  .rodata                 const    0x0800de30    0x2c  inv_mpu.o [1]
+  .text                   ro code  0x0800de5c    0x28  data_init.o [6]
+  .rodata                 const    0x0800de84    0x24  main.o [1]
+  .iar.init_table         const    0x0800dea8    0x2c  - Linker created -
+  .rodata                 const    0x0800ded4    0x20  main.o [1]
+  .rodata                 const    0x0800def4    0x1c  main.o [1]
+  .rodata                 const    0x0800df10    0x1c  main.o [1]
+  .text                   ro code  0x0800df2c    0x1a  cmain.o [6]
+  .text                   ro code  0x0800df46     0x4  low_level_init.o [3]
+  .text                   ro code  0x0800df4a     0x4  exit.o [3]
+  .text                   ro code  0x0800df50     0xa  cexit.o [6]
+  .rodata                 const    0x0800df5c    0x18  mpl.o [1]
+  .rodata                 const    0x0800df74    0x14  inv_mpu.o [1]
+  .rodata                 const    0x0800df88    0x14  main.o [1]
+  .rodata                 const    0x0800df9c    0x10  inv_mpu.o [1]
+  .rodata                 const    0x0800dfac    0x10  mpl.o [1]
+  .rodata                 const    0x0800dfbc    0x10  mpl.o [1]
+  .text                   ro code  0x0800dfcc    0x10  startup_stm32l1xx_md.o [1]
+  .text.inv_start_9x_sensor_fusion
+                          ro code  0x0800dfdc    0x10  fusion_9axis.o [4]
+  .text.inv_start_gyro_tc
+                          ro code  0x0800dfec    0x10  gyro_tc.o [4]
+  .text.inv_start_magnetic_disturbance
+                          ro code  0x0800dffc    0x10  mag_disturb.o [4]
+  .text.inv_start_vector_compass_cal
+                          ro code  0x0800e00c    0x10  compass_vec_cal.o [4]
+  .rodata                 const    0x0800e01c     0xc  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e028     0xc  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e034     0xc  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e040     0xc  main.o [1]
+  .rodata                 const    0x0800e04c     0xc  main.o [1]
+  .rodata.str1.4          const    0x0800e058     0xc  quaternion_supervisor.o [4]
+  .text                   ro code  0x0800e064     0xc  cstartup_M.o [6]
+  .rodata                 const    0x0800e070     0x8  main.o [1]
+  .rodata                 const    0x0800e078     0x4  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e07c     0x4  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e080     0x4  inv_mpu_dmp_motion_driver.o [1]
+  .rodata                 const    0x0800e084     0x4  inv_mpu_dmp_motion_driver.o [1]
+  .text                   ro code  0x0800e088     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e08c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e090     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e094     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e098     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e09c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0a0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0a4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0a8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0ac     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0b0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0b4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0b8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0bc     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0c0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0c4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0c8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0cc     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0d0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0d4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0d8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0dc     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0e0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0e4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0e8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0ec     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0f0     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0f4     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0f8     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e0fc     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e100     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e104     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e108     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e10c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e110     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e114     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e118     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e11c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e120     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e124     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e128     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e12c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e130     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e134     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e138     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e13c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e140     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e144     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e148     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e14c     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e150     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e154     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e158     0x4  startup_stm32l1xx_md.o [1]
+  .text                   ro code  0x0800e15c     0x4  startup_stm32l1xx_md.o [1]
+  .rodata                 const    0x0800e160     0x0  zero_init3.o [6]
+  .rodata                 const    0x0800e160     0x0  packbits_init.o [6]
+  Initializer bytes       ro data  0x0800e160    0x5f  <for P2 s0>
+                                 - 0x0800e1bf  0xe0cb
+
+"P2":                                          0x1860
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
   P2 s0                            0x20000000   0x17c  <Init block>
     __DLIB_PERTHREAD      inited   0x20000000    0x88  localeconv.o [3]
     __DLIB_PERTHREAD      inited   0x20000088    0x74  setlocale.o [3]
     .data                 inited   0x200000fc    0x38  inv_mpu.o [1]
     .data                 inited   0x20000134    0x10  stm32l1xx_rcc.o [1]
-    .data                 inited   0x20000144     0xc  mpu_int.o [1]
-    .data                 inited   0x20000150     0xc  mpu_int.o [1]
+    .data                 inited   0x20000144     0xc  main.o [1]
+    .data                 inited   0x20000150     0xc  main.o [1]
     .data                 inited   0x2000015c     0xc  stm32l1xx_rcc.o [1]
     .data                 inited   0x20000168     0x4  main.o [1]
     .data.r1.6050         inited   0x2000016c     0x4  compass_vec_cal.o [4]
@@ -443,6 +714,7 @@ __dlib_dynamic_initialization = normal
   .bss.mag_disturb        zero     0x20001018    0xb8  mag_disturb.o [4]
   .bss                    zero     0x200010d0    0x88  results_holder.o [1]
   .bss                    zero     0x20001158    0x54  start_manager.o [1]
+<<<<<<< HEAD
   .bss                    zero     0x200011ac     0x4  app_config.o [1]
   .bss.fnm_user           zero     0x200011b0    0x40  fast_no_motion.o [4]
   .bss                    zero     0x200011f0    0x28  eMPL_outputs.o [1]
@@ -466,6 +738,28 @@ __dlib_dynamic_initialization = normal
   HEAP                             0x20001650   0x200  <Block>
     HEAP                  uninit   0x20001650   0x200  <Block tail>
                                  - 0x20001850  0x1850
+=======
+  .bss                    zero     0x200011ac    0x24  main.o [1]
+  .bss.fnm_user           zero     0x200011d0    0x40  fast_no_motion.o [4]
+  .bss                    zero     0x20001210    0x28  eMPL_outputs.o [1]
+  .bss                    zero     0x20001238    0x10  inv_mpu_dmp_motion_driver.o [1]
+  .bss                    zero     0x20001248     0x8  xxmemxmalloc.o [3]
+  .bss                    zero     0x20001250     0x4  app_config.o [1]
+  .bss                    zero     0x20001254     0x4  app_config.o [1]
+  .bss                    zero     0x20001258     0x4  message_layer.o [1]
+  .bss                    zero     0x2000125c     0x4  xgetmemchunk.o [3]
+  CSTACK                           0x20001260   0x400  <Block>
+    CSTACK                uninit   0x20001260   0x400  <Block tail>
+  HEAP                             0x20001660   0x200  <Block>
+    HEAP                  uninit   0x20001660   0x200  <Block tail>
+                                 - 0x20001860  0x1860
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 
 *******************************************************************************
@@ -475,12 +769,36 @@ __dlib_dynamic_initialization = normal
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     1 destination range, total size 0x10d0:
           0x20000180  0x10d0
 
 Copy/packbits (__iar_packbits_init3)
     1 source range, total size 0x5f (25% of destination):
           0x0800e2fc    0x5f
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+    1 destination range, total size 0x10e0:
+          0x20000180  0x10e0
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x5f (25% of destination):
+          0x0800e160    0x5f
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    1 destination range, total size 0x10e0:
+          0x20000180  0x10e0
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x5f (25% of destination):
+          0x0800e160    0x5f
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     1 destination range, total size 0x17c:
           0x20000000   0x17c
 
@@ -500,13 +818,35 @@ C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A
     i2c_stm32l1.o                  1 730
     inv_mpu.o                      5 424      142       56
     inv_mpu_dmp_motion_driver.o    2 736    3 118       16
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     main.o                           706      109        7
+=======
+    main.o                         1 152      183       64
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    main.o                         1 152      183       64
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    main.o                         1 152      183       64
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     message_layer.o                   36                 4
     misc.o                           120
     ml_math_func.o                 1 972
     mpl.o                            176      192
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     mpu_int.o                        454        6       41
     packet.o                         830
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+    packet.o                         410
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
     results_holder.o                 808               136
     start_manager.o                  116                84
     startup_stm32l1xx_md.o           476
@@ -522,7 +862,19 @@ C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A
     system_stm32l1xx.o               320
     uart_stm32l1.o                   204
     ------------------------------------------------------
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     Total:                        21 950    3 642    1 556
+=======
+    Total:                        21 478    3 710    1 572
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    Total:                        21 478    3 710    1 572
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    Total:                        21 478    3 710    1 572
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 command line: [2]
     ------------------------------------------------------
@@ -642,7 +994,19 @@ shb_l.a: [7]
     Gaps                              64        8        4
     Linker created                             44    1 536
 ----------------------------------------------------------
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     Grand Total:                  54 430    3 773    6 224
+=======
+    Grand Total:                  53 954    3 837    6 240
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    Grand Total:                  53 954    3 837    6 240
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+    Grand Total:                  53 954    3 837    6 240
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 
 *******************************************************************************
@@ -651,6 +1015,9 @@ shb_l.a: [7]
 
 Entry                      Address   Size  Type      Object
 -----                      -------   ----  ----      ------
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 ?main                   0x0800e0f1         Code  Gb  cmain.o [6]
 APBAHBPrescTable        0x20000134   0x10  Data  Lc  stm32l1xx_rcc.o [1]
 BusFault_Handler        0x0800dfe7    0x2  Code  Gb  stm32l1xx_it.o [1]
@@ -723,6 +1090,111 @@ Region$$Table$$Base     0x0800e088          --   Gb  - Linker created -
 Region$$Table$$Limit    0x0800e0b4          --   Gb  - Linker created -
 SVC_Handler             0x0800dfeb    0x2  Code  Gb  stm32l1xx_it.o [1]
 SYSCFG_EXTILineConfig   0x0800d701   0x50  Code  Gb  stm32l1xx_syscfg.o [1]
+=======
+?main                   0x0800df2d         Code  Gb  cmain.o [6]
+APBAHBPrescTable        0x20000134   0x10  Data  Lc  stm32l1xx_rcc.o [1]
+BusFault_Handler        0x0800ddd7    0x2  Code  Gb  stm32l1xx_it.o [1]
+CSTACK$$Base            0x20001260          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001660          --   Gb  - Linker created -
+ComputeAngleVelocity    0x0800d72d   0x54  Code  Gb  mag_disturb.o [4]
+DMA1_Channel1_IRQHandler
+                        0x0800dded    0x2  Code  Gb  stm32l1xx_it.o [1]
+DebugMon_Handler        0x0800dddd    0x2  Code  Gb  stm32l1xx_it.o [1]
+Delay                   0x08001d29    0xe  Code  Gb  app_config.o [1]
+=======
+?main                   0x0800df2d         Code  Gb  cmain.o [6]
+APBAHBPrescTable        0x20000134   0x10  Data  Lc  stm32l1xx_rcc.o [1]
+BusFault_Handler        0x0800ddd7    0x2  Code  Gb  stm32l1xx_it.o [1]
+CSTACK$$Base            0x20001260          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001660          --   Gb  - Linker created -
+ComputeAngleVelocity    0x0800d72d   0x54  Code  Gb  mag_disturb.o [4]
+DMA1_Channel1_IRQHandler
+                        0x0800dded    0x2  Code  Gb  stm32l1xx_it.o [1]
+DebugMon_Handler        0x0800dddd    0x2  Code  Gb  stm32l1xx_it.o [1]
+Delay                   0x08001d29    0xe  Code  Gb  app_config.o [1]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+?main                   0x0800df2d         Code  Gb  cmain.o [6]
+APBAHBPrescTable        0x20000134   0x10  Data  Lc  stm32l1xx_rcc.o [1]
+BusFault_Handler        0x0800ddd7    0x2  Code  Gb  stm32l1xx_it.o [1]
+CSTACK$$Base            0x20001260          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001660          --   Gb  - Linker created -
+ComputeAngleVelocity    0x0800d72d   0x54  Code  Gb  mag_disturb.o [4]
+DMA1_Channel1_IRQHandler
+                        0x0800dded    0x2  Code  Gb  stm32l1xx_it.o [1]
+DebugMon_Handler        0x0800dddd    0x2  Code  Gb  stm32l1xx_it.o [1]
+Delay                   0x08001d29    0xe  Code  Gb  app_config.o [1]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+EXTI0_IRQHandler        0x0800ddf1    0x2  Code  Gb  stm32l1xx_it.o [1]
+EXTI1_IRQHandler        0x0800ddf3    0xe  Code  Gb  stm32l1xx_it.o [1]
+EXTI_ClearITPendingBit  0x0800bd95    0x6  Code  Gb  stm32l1xx_exti.o [1]
+EXTI_Init               0x0800bd0d   0x88  Code  Gb  stm32l1xx_exti.o [1]
+GPIO_Config             0x0800ba79   0x84  Code  Gb  gpio.o [1]
+GPIO_DeInit             0x080025e5   0x94  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_Init               0x08002691   0xa8  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_PinAFConfig        0x08002739   0x5a  Code  Gb  stm32l1xx_gpio.o [1]
+HEAP$$Base              0x20001660          --   Gb  - Linker created -
+HEAP$$Limit             0x20001860          --   Gb  - Linker created -
+HardFault_Handler       0x0800ddd3    0x2  Code  Gb  stm32l1xx_it.o [1]
+I2C_AcknowledgeConfig   0x08002921   0x1c  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_ClearFlag           0x080029d9    0xe  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_Cmd                 0x080028cd   0x1c  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_DeInit              0x08002795   0x36  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_GenerateSTART       0x080028e9   0x1c  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_GenerateSTOP        0x08002905   0x1c  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_GetFlagStatus       0x08002993   0x46  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_Init                0x080027cb   0xf2  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_ReadRegister        0x08002979   0x1a  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_ReceiveData         0x08002973    0x6  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_Send7bitAddress     0x08002957   0x16  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_SendData            0x0800296d    0x6  Code  Gb  stm32l1xx_i2c.o [1]
+I2C_SoftwareResetCmd    0x0800293d   0x1a  Code  Gb  stm32l1xx_i2c.o [1]
+I2Cx_TIMEOUT_UserCallback
+                        0x080016d5   0x6e  Code  Lc  i2c.o [1]
+I2cMaster_Init          0x08001625   0xb0  Code  Gb  i2c.o [1]
+InStream_Read           0x0800da1d   0x22  Code  Lc  packbits_init.o [6]
+Init_GPIOs              0x0800b711   0x18  Code  Gb  main.o [1]
+LoadInt                 0x08003189   0x6e  Code  Lc  xprintffull.o [3]
+MPL_libraries_init      0x0800b52b   0x5c  Code  Gb  main.o [1]
+MPU_hardware_init       0x0800b587   0x3c  Code  Gb  main.o [1]
+Mag3ofNormalizedLong    0x0800d62d   0x56  Code  Gb  mag_disturb.o [4]
+MagDisturbCheckSettling
+                        0x0800d781   0x48  Code  Gb  mag_disturb.o [4]
+MagDisturbSetDisturbance
+                        0x0800d7c9   0x78  Code  Gb  mag_disturb.o [4]
+MemManage_Handler       0x0800ddd5    0x2  Code  Gb  stm32l1xx_it.o [1]
+NMI_Handler             0x0800ddd1    0x2  Code  Gb  stm32l1xx_it.o [1]
+NVIC_Init               0x0800bdb1   0x68  Code  Gb  misc.o [1]
+NVIC_SetPriority        0x0800b2a9   0x2a  Code  Lc  main.o [1]
+PLLMulTable             0x2000015c    0xc  Data  Lc  stm32l1xx_rcc.o [1]
+PWR_GetFlagStatus       0x0800ba55   0x1a  Code  Gb  stm32l1xx_pwr.o [1]
+PWR_VoltageScalingConfig
+                        0x0800ba3d   0x18  Code  Gb  stm32l1xx_pwr.o [1]
+PendSV_Handler          0x0800dddf    0x2  Code  Gb  stm32l1xx_it.o [1]
+RCC_AHBPeriphClockCmd   0x080024cd   0x1e  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_AHBPeriphResetCmd   0x08002527   0x1e  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08002509   0x1e  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x08002545   0x1e  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x080024eb   0x1e  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_Configuration       0x0800b681   0x46  Code  Gb  main.o [1]
+RCC_GetClocksFreq       0x080023c3  0x10a  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_GetFlagStatus       0x08002563   0x44  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_HSEConfig           0x08002379   0x10  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_HSICmd              0x080023a1    0xa  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_MSIRangeConfig      0x08002389   0x18  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_SYSCLKConfig        0x080023ab   0x18  Code  Gb  stm32l1xx_rcc.o [1]
+RTC_WKUP_IRQHandler     0x0800ddef    0x2  Code  Gb  stm32l1xx_it.o [1]
+Region$$Table$$Base     0x0800dea8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0800ded4          --   Gb  - Linker created -
+SVC_Handler             0x0800dddb    0x2  Code  Gb  stm32l1xx_it.o [1]
+SYSCFG_EXTILineConfig   0x0800bcb9   0x50  Code  Gb  stm32l1xx_syscfg.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 Sensors_I2C_ReadRegister
                         0x080018b9  0x36e  Code  Gb  i2c_stm32l1.o [1]
 Sensors_I2C_ReadRegister_swap
@@ -730,14 +1202,29 @@ Sensors_I2C_ReadRegister_swap
 Sensors_I2C_WriteRegister
                         0x08001743  0x176  Code  Gb  i2c_stm32l1.o [1]
 Sensors_I2C_WriteRegister_swap
+<<<<<<< HEAD
                         0x08001c49   0x46  Code  Gb  i2c_stm32l1.o [1]
 SetSysClock             0x0800dadb   0xc6  Code  Lc  system_stm32l1xx.o [1]
 SysTick_Config          0x0800ce8f   0x30  Code  Lc  main.o [1]
 SysTick_Handler         0x0800dff1    0xc  Code  Gb  stm32l1xx_it.o [1]
 SystemInit              0x0800da89   0x52  Code  Gb  system_stm32l1xx.o [1]
+=======
+                        0x08001c49   0x46  Code  Gb  i2c.o [1]
+SetSysClock             0x0800d92f   0xc6  Code  Lc  system_stm32l1xx.o [1]
+SysTick_Config          0x0800b2d3   0x36  Code  Lc  main.o [1]
+SysTick_Handler         0x0800dde1    0xc  Code  Gb  stm32l1xx_it.o [1]
+SystemInit              0x0800d8dd   0x52  Code  Gb  system_stm32l1xx.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 TimeStamp_Increment     0x08001d1d    0xc  Code  Gb  app_config.o [1]
 TimingDelay             0x200011ac    0x4  Data  Lc  app_config.o [1]
 TimingDelay_Decrement   0x08001d09   0x14  Code  Gb  app_config.o [1]
+<<<<<<< HEAD
 USART_Cmd               0x08003f39   0x1c  Code  Gb  stm32l1xx_usart.o [1]
 USART_Config            0x08002c31   0xa2  Code  Gb  uart_stm32l1.o [1]
 USART_GetFlagStatus     0x08003fab   0x18  Code  Gb  stm32l1xx_usart.o [1]
@@ -748,6 +1235,18 @@ UsageFault_Handler      0x0800dfe9    0x2  Code  Gb  stm32l1xx_it.o [1]
 _EncodingSb_Mbtowc      0x08004b63   0x30  Code  Gb  xencoding_sb.o [3]
 _EncodingSb_Wctomb      0x08004b49   0x1a  Code  Gb  xencoding_sb.o [3]
 _GenldFull              0x08003bb7  0x24c  Code  Lc  xprintffull.o [3]
+=======
+USART_Cmd               0x08003d95   0x1c  Code  Gb  stm32l1xx_usart.o [1]
+USART_Config            0x08002a8d   0xa2  Code  Gb  uart.o [1]
+USART_GetFlagStatus     0x08003e07   0x18  Code  Gb  stm32l1xx_usart.o [1]
+USART_ITConfig          0x08003db9   0x4e  Code  Gb  stm32l1xx_usart.o [1]
+USART_Init              0x08003ca9   0xe4  Code  Gb  stm32l1xx_usart.o [1]
+USART_SendData          0x08003db1    0x8  Code  Gb  stm32l1xx_usart.o [1]
+UsageFault_Handler      0x0800ddd9    0x2  Code  Gb  stm32l1xx_it.o [1]
+_EncodingSb_Mbtowc      0x080049bf   0x30  Code  Gb  xencoding_sb.o [3]
+_EncodingSb_Wctomb      0x080049a5   0x1a  Code  Gb  xencoding_sb.o [3]
+_GenldFull              0x08003a13  0x24c  Code  Lc  xprintffull.o [3]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 _IsdstStr               0x2000008c    0x4  Data  Gb  setlocale.o [3]
 _LdtobFull              0x080037b5  0x3fc  Code  Lc  xprintffull.o [3]
 _LitobFull              0x080036ad  0x106  Code  Lc  xprintffull.o [3]
@@ -784,7 +1283,19 @@ __aeabi_dsub            0x0800454d         Code  Gb  DblSub.o [5]
 __aeabi_errno_addr      0x08007c81    0x6  Code  Gb  errno.o [3]
 __aeabi_f2d             0x08009b7d         Code  Gb  FltToDbl.o [5]
 __aeabi_f2iz            0x08002139         Code  Gb  FltToS32.o [5]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 __aeabi_f2lz            0x0800c835         Code  Gb  FltToS64.o [5]
+=======
+__aeabi_f2lz            0x0800d2a9         Code  Gb  FltToS64.o [5]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+__aeabi_f2lz            0x0800d2a9         Code  Gb  FltToS64.o [5]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+__aeabi_f2lz            0x0800d2a9         Code  Gb  FltToS64.o [5]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 __aeabi_fadd            0x08001fdd         Code  Gb  FltAdd.o [5]
 __aeabi_fcmpeq          0x0800a37d         Code  Gb  FltLogEq.o [5]
 __aeabi_fcmpge          0x0800a1c9         Code  Gb  FltLogGe.o [5]
@@ -796,12 +1307,27 @@ __aeabi_fmul            0x08002061         Code  Gb  FltMul.o [5]
 __aeabi_fsub            0x08001df9         Code  Gb  FltSub.o [5]
 __aeabi_i2d             0x0800451d         Code  Gb  I32ToDbl.o [5]
 __aeabi_i2f             0x08001dc5         Code  Gb  I32ToFlt.o [5]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 __aeabi_l2f             0x0800c7d1         Code  Gb  I64ToFlt.o [5]
 __aeabi_ldiv0           0x08004bd5         Code  Gb  I64DivZer.o [6]
 __aeabi_ldivmod         0x080041e5         Code  Gb  I64DivMod.o [6]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+__aeabi_l2f             0x0800d245         Code  Gb  I64ToFlt.o [5]
+__aeabi_ldiv0           0x08004a31         Code  Gb  I64DivZer.o [6]
+__aeabi_ldivmod         0x08004041         Code  Gb  I64DivMod.o [6]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 __aeabi_memset          0x08001d55         Code  Gb  ABImemset.o [6]
 __aeabi_ui2d            0x08004531         Code  Gb  I32ToDbl.o [5]
 __aeabi_ui2f            0x08001dd9         Code  Gb  I32ToFlt.o [5]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 __aeabi_ul2f            0x0800c7ed         Code  Gb  I64ToFlt.o [5]
 __aeabi_uldivmod        0x08004229         Code  Gb  I64DivMod.o [6]
 __cmain                 0x0800e0f1         Code  Gb  cmain.o [6]
@@ -810,6 +1336,20 @@ __data_GetMemChunk      0x08004ba9   0x2c  Code  Gb  xgetmemchunk.o [3]
 __exit                  0x0800dca1   0x14  Code  Gb  exit.o [7]
 __iar_Dnorm             0x08004317   0x42  Code  Gb  xdnorm.o [5]
 __iar_Dscale            0x080043b9  0x10c  Code  Gb  xdscale.o [5]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+__aeabi_ul2f            0x0800d261         Code  Gb  I64ToFlt.o [5]
+__aeabi_uldivmod        0x08004085         Code  Gb  I64DivMod.o [6]
+__cmain                 0x0800df2d         Code  Gb  cmain.o [6]
+__data_Aldata           0x20001248    0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_GetMemChunk      0x08004a05   0x2c  Code  Gb  xgetmemchunk.o [3]
+__exit                  0x0800daf5   0x14  Code  Gb  exit.o [7]
+__iar_Dnorm             0x08004173   0x42  Code  Gb  xdnorm.o [5]
+__iar_Dscale            0x08004215  0x10c  Code  Gb  xdscale.o [5]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 __iar_Errno             0x20000178    0x4  Data  Gb  errno.o [3]
 __iar_FAtan             0x08007b5d   0xb4  Code  Gb  xfatan.o [5]
 __iar_FDint             0x0800a991   0x50  Code  Gb  xfdint.o [5]
@@ -822,10 +1362,23 @@ __iar_Mbcurmax          0x0800408d    0xa  Code  Gb  xmbcurmax.o [3]
 __iar_Memchr            0x08004035         Code  Gb  memchr.o [6]
 __iar_Memset            0x08001d55         Code  Gb  ABImemset.o [6]
 __iar_Memset_word       0x08001d5d         Code  Gb  ABImemset.o [6]
+<<<<<<< HEAD
 __iar_Strchr            0x08003fe5         Code  Gb  strchr.o [6]
 __iar_d2uiz             0x080044fd         Code  Gb  DblToI32.o [5]
 __iar_dadd              0x08004bed         Code  Gb  DblAdd.o [5]
 __iar_data_init3        0x0800e03d   0x28  Code  Gb  data_init.o [6]
+=======
+__iar_Strchr            0x08003e41         Code  Gb  strchr.o [6]
+__iar_d2uiz             0x08004359         Code  Gb  DblToI32.o [5]
+__iar_dadd              0x08004a49         Code  Gb  DblAdd.o [5]
+__iar_data_init3        0x0800de5d   0x28  Code  Gb  data_init.o [6]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 __iar_dlib_perthread_access
                         0x08004cc1    0x2  Code  Gb  xtls.o [3]
 __iar_dsub              0x08004561         Code  Gb  DblSub.o [5]
@@ -835,6 +1388,9 @@ __iar_fadd              0x08001fed         Code  Gb  FltAdd.o [5]
 __iar_fmodf             0x0800a9e1         Code  Gb  fmodf.o [5]
 __iar_fsub              0x08001e09         Code  Gb  FltSub.o [5]
 __iar_fsubStart         0x08001e19         Code  Gb  FltSub.o [5]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 __iar_packbits_init3    0x0800dbeb   0xb0  Code  Gb  packbits_init.o [6]
 __iar_program_start     0x0800e209         Code  Gb  cstartup_M.o [6]
 __iar_sqrt              0x08009a8d         Code  Gb  sqrt.o [5]
@@ -842,6 +1398,25 @@ __iar_sqrtf             0x08007acd         Code  Gb  sqrtf.o [5]
 __iar_ui2d              0x08004535         Code  Gb  I32ToDbl.o [5]
 __iar_ui2f              0x08001ddd         Code  Gb  I32ToFlt.o [5]
 __iar_ul2f              0x0800c7f9         Code  Gb  I64ToFlt.o [5]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+__iar_packbits_init3    0x0800da3f   0xb0  Code  Gb  packbits_init.o [6]
+__iar_program_start     0x0800e065         Code  Gb  cstartup_M.o [6]
+__iar_sqrt              0x0800992d         Code  Gb  sqrt.o [5]
+__iar_sqrtf             0x08007929         Code  Gb  sqrtf.o [5]
+__iar_ui2d              0x08004391         Code  Gb  I32ToDbl.o [5]
+__iar_ui2f              0x08001ddd         Code  Gb  I32ToFlt.o [5]
+__iar_ul2f              0x0800d26d         Code  Gb  I64ToFlt.o [5]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 __iar_unaligned___aeabi_memcpy
                         0x08002bb9         Code  Gb  ABImemcpy_unaligned.o [6]
 __iar_unaligned___aeabi_memcpy4
@@ -849,6 +1424,9 @@ __iar_unaligned___aeabi_memcpy4
 __iar_unaligned___aeabi_memcpy8
                         0x08002bd9         Code  Gb  ABImemcpy_unaligned.o [6]
 __iar_unaligned___aeabi_memmove
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800b871         Code  Gb  ABImemmove_unaligned.o [6]
 __iar_unaligned___aeabi_memmove4
                         0x0800b871         Code  Gb  ABImemmove_unaligned.o [6]
@@ -883,6 +1461,57 @@ dmp_enable_6x_lp_quat   0x08006057   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o
 dmp_enable_feature      0x08005d9b  0x230  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
 dmp_enable_gyro_cal     0x08005fcb   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
 dmp_enable_lp_quat      0x08006011   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned___aeabi_memmove4
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned___aeabi_memmove8
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned_memcmp  0x0800217d         Code  Gb  memcmp_unaligned.o [6]
+__iar_zero_init3        0x08001ce7   0x22  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0800df47    0x4  Code  Gb  low_level_init.o [3]
+__print_result_location
+                        0x0800b8b5   0x1e  Code  Lc  mpl.o [1]
+__vector_table          0x08000000         Data  Gb  startup_stm32l1xx_md.o [1]
+<<<<<<< HEAD
+=======
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned___aeabi_memmove4
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned___aeabi_memmove8
+                        0x0800c351         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned_memcmp  0x0800217d         Code  Gb  memcmp_unaligned.o [6]
+__iar_zero_init3        0x08001ce7   0x22  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0800df47    0x4  Code  Gb  low_level_init.o [3]
+__print_result_location
+                        0x0800b8b5   0x1e  Code  Lc  mpl.o [1]
+__vector_table          0x08000000         Data  Gb  startup_stm32l1xx_md.o [1]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+_call_main              0x0800df39         Code  Gb  cmain.o [6]
+_exit                   0x0800df51         Code  Gb  cexit.o [6]
+_main                   0x0800df43         Code  Gb  cmain.o [6]
+a                       0x08007a8c   0x20  Data  Lc  xfatan.o [5]
+abort                   0x0800daef    0x6  Code  Gb  abort.o [3]
+acosf                   0x0800d685   0xa8  Code  Gb  acosf.o [5]
+atan2f                  0x08007839   0xca  Code  Gb  atan2f.o [5]
+cb                      0x20000f30   0xe8  Data  Wk  compass_vec_cal.o [4]
+cb_sim                  0x20000e48   0xe8  Data  Wk  compass_vec_cal.o [4]
+cb_test                 0x20000d60   0xe8  Data  Wk  compass_vec_cal.o [4]
+compass_pdata           0x20000150    0xc  Data  Lc  main.o [1]
+cosf                    0x0800a205    0x6  Code  Gb  cosf.o [5]
+data_builder_init       0x0800b5c3   0x5a  Code  Gb  main.o [1]
+decode_gesture          0x08005ef9   0x66  Code  Lc  inv_mpu_dmp_motion_driver.o [1]
+div                     0x08004981    0xe  Code  Gb  div.o [3]
+dmp                     0x20001238   0x10  Data  Lc  inv_mpu_dmp_motion_driver.o [1]
+dmp_enable_6x_lp_quat   0x08005eb3   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
+dmp_enable_feature      0x08005bf7  0x230  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
+dmp_enable_gyro_cal     0x08005e27   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
+dmp_enable_lp_quat      0x08005e6d   0x46  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 dmp_load_motion_driver_firmware
                         0x080058bd   0x18  Code  Gb  inv_mpu_dmp_motion_driver.o [1]
 dmp_memory              0x08004cc4  0xbf8  Data  Lc  inv_mpu_dmp_motion_driver.o [1]
@@ -904,6 +1533,9 @@ ds                      0x20000950  0x198  Data  Lc  storage_manager.o [1]
 eMPL_out                0x200011f0   0x28  Data  Lc  eMPL_outputs.o [1]
 eMPL_send_data          0x08002379  0x1a4  Code  Gb  packet.o [1]
 eMPL_send_quat          0x080022b1   0xc8  Code  Gb  packet.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 exit                    0x0800e10f    0x4  Code  Gb  exit.o [3]
 flags_dmp_on            0x2000124c    0x1  Data  Lc  main.o [1]
 flags_new_data          0x2000124e    0x1  Data  Lc  main.o [1]
@@ -920,6 +1552,30 @@ gyro_sampling_rate      0x20001244    0x2  Data  Lc  mpu_int.o [1]
 hal_timestamp           0x20001230    0x4  Data  Gb  app_config.o [1]
 hardware_init           0x0800d11b   0x10  Code  Gb  main.o [1]
 hw                      0x0800e14c   0x10  Data  Gb  inv_mpu.o [1]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+exit                    0x0800df4b    0x4  Code  Gb  exit.o [3]
+fmodf                   0x0800a871         Code  Gb  fmodf.o [5]
+fnm                     0x20000180  0x260  Data  Wk  fast_no_motion.o [4]
+fnm_user                0x200011d0   0x40  Data  Lc  fast_no_motion.o [4]
+fputchar                0x08002b2f   0x20  Code  Gb  uart.o [1]
+free                    0x08003fc1   0x7a  Code  Gb  xxmemxfree.o [3]
+gyro_data_ready_cb      0x0800b4ed    0x8  Code  Gb  main.o [1]
+gyro_pdata              0x20000144    0xc  Data  Lc  main.o [1]
+hal                     0x200011ac   0x24  Data  Lc  main.o [1]
+hal_timestamp           0x20001254    0x4  Data  Gb  app_config.o [1]
+hal_variable_init       0x0800b61d   0x2e  Code  Gb  main.o [1]
+hw                      0x0800df9c   0x10  Data  Gb  inv_mpu.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_add_compass_block_data
                         0x08008661   0x9a  Code  Gb  compass_vec_cal.o [4]
 inv_apply_calibration   0x0800659b   0x6a  Code  Gb  data_builder.o [1]
@@ -932,7 +1588,19 @@ inv_center_sum          0x080093b1  0x6dc  Code  Gb  compass_vec_cal.o [4]
 inv_cheap_gaussian      0x0800a291   0x6c  Code  Gb  compass_vec_cal.o [4]
 inv_cheap_rand          0x0800a335   0x40  Code  Gb  compass_vec_cal.o [4]
 inv_check_magnetic_disturbance
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800c8ad  0x30c  Code  Gb  mag_disturb.o [4]
+=======
+                        0x0800d321  0x30c  Code  Gb  mag_disturb.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800d321  0x30c  Code  Gb  mag_disturb.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800d321  0x30c  Code  Gb  mag_disturb.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_check_peaks.part.0.constprop.4
                         0x08009d91  0x1ec  Code  Lc  compass_vec_cal.o [4]
 inv_check_sample_balance
@@ -948,10 +1616,25 @@ inv_data_builder        0x20000ae8  0x140  Data  Lc  data_builder.o [1]
 inv_db_load_func        0x0800636d   0x56  Code  Lc  data_builder.o [1]
 inv_db_save_func        0x080063c3   0x18  Code  Lc  data_builder.o [1]
 inv_detect_motion_by_gyro_accel
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800c2a1  0x134  Code  Gb  fast_no_motion.o [4]
+=======
+                        0x0800cd81  0x134  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800cd81  0x134  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800cd81  0x134  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_disable_compass_soft_iron_matrix
                         0x08006d7d    0xa  Code  Gb  data_builder.o [1]
 inv_enable_9x_sensor_fusion
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800d641   0x24  Code  Gb  fusion_9axis.o [4]
 inv_enable_eMPL_outputs
                         0x0800d479   0x18  Code  Gb  eMPL_outputs.o [1]
@@ -960,14 +1643,54 @@ inv_enable_gyro_tc      0x0800d67d   0x40  Code  Gb  gyro_tc.o [4]
 inv_enable_magnetic_disturbance
                         0x0800d6d5   0x2c  Code  Gb  mag_disturb.o [4]
 inv_enable_quaternion   0x0800d629   0x18  Code  Gb  quaternion_supervisor.o [4]
+=======
+                        0x0800b97d   0x24  Code  Gb  fusion_9axis.o [4]
+inv_enable_eMPL_outputs
+                        0x0800b889   0x18  Code  Gb  eMPL_outputs.o [1]
+inv_enable_fast_nomot   0x0800b9a1   0x18  Code  Gb  fast_no_motion.o [4]
+inv_enable_gyro_tc      0x0800b9b9   0x40  Code  Gb  gyro_tc.o [4]
+inv_enable_magnetic_disturbance
+                        0x0800ba11   0x2c  Code  Gb  mag_disturb.o [4]
+inv_enable_quaternion   0x0800b965   0x18  Code  Gb  quaternion_supervisor.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800b97d   0x24  Code  Gb  fusion_9axis.o [4]
+inv_enable_eMPL_outputs
+                        0x0800b889   0x18  Code  Gb  eMPL_outputs.o [1]
+inv_enable_fast_nomot   0x0800b9a1   0x18  Code  Gb  fast_no_motion.o [4]
+inv_enable_gyro_tc      0x0800b9b9   0x40  Code  Gb  gyro_tc.o [4]
+inv_enable_magnetic_disturbance
+                        0x0800ba11   0x2c  Code  Gb  mag_disturb.o [4]
+inv_enable_quaternion   0x0800b965   0x18  Code  Gb  quaternion_supervisor.o [4]
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_enable_results_holder
                         0x08007039   0x1c  Code  Gb  results_holder.o [1]
 inv_enable_vector_compass_cal
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800d6bd   0x18  Code  Gb  compass_vec_cal.o [4]
+=======
+                        0x0800b9f9   0x18  Code  Gb  compass_vec_cal.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800b9f9   0x18  Code  Gb  compass_vec_cal.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800b9f9   0x18  Code  Gb  compass_vec_cal.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_execute_mpl_start_notification
                         0x080079a7   0x30  Code  Gb  start_manager.o [1]
 inv_execute_on_data     0x08006a91   0x96  Code  Gb  data_builder.o [1]
 inv_fast_nomot_parameter
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800c5f5  0x170  Code  Gb  fast_no_motion.o [4]
 inv_fast_nomot_set_gyro_bias
                         0x0800c401   0xcc  Code  Gb  fast_no_motion.o [4]
@@ -977,19 +1700,77 @@ inv_fast_nomot_store_data_compass
                         0x0800c501   0x44  Code  Gb  fast_no_motion.o [4]
 inv_filter_correction_angle
                         0x0800bcb9  0x1f0  Code  Gb  fusion_9axis.o [4]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800d0d5  0x170  Code  Gb  fast_no_motion.o [4]
+inv_fast_nomot_set_gyro_bias
+                        0x0800cee1   0xcc  Code  Gb  fast_no_motion.o [4]
+inv_fast_nomot_store_data
+                        0x0800d025   0xae  Code  Gb  fast_no_motion.o [4]
+inv_fast_nomot_store_data_compass
+                        0x0800cfe1   0x44  Code  Gb  fast_no_motion.o [4]
+inv_filter_correction_angle
+                        0x0800c799  0x1f0  Code  Gb  fusion_9axis.o [4]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_generate_accel_gyro_quaternion
                         0x0800aab1  0x74c  Code  Gb  quaternion_supervisor.o [4]
 inv_generate_eMPL_outputs
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800d34d  0x106  Code  Lc  eMPL_outputs.o [1]
 inv_generate_fast_nomot
                         0x0800beb5  0x34e  Code  Gb  fast_no_motion.o [4]
+=======
+                        0x0800b75d  0x106  Code  Lc  eMPL_outputs.o [1]
+inv_generate_fast_nomot
+                        0x0800c995  0x34e  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800b75d  0x106  Code  Lc  eMPL_outputs.o [1]
+inv_generate_fast_nomot
+                        0x0800c995  0x34e  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800b75d  0x106  Code  Lc  eMPL_outputs.o [1]
+inv_generate_fast_nomot
+                        0x0800c995  0x34e  Code  Gb  fast_no_motion.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_generate_gyro_quaternion
                         0x0800b2f1  0x128  Code  Gb  quaternion_supervisor.o [4]
 inv_generate_quaternion
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800deb1   0x58  Code  Lc  quaternion_supervisor.o [4]
 inv_generate_results    0x08006fcd    0xc  Code  Gb  results_holder.o [1]
 inv_generate_vector_compass_cal
                         0x0800dce9   0xa4  Code  Gb  compass_vec_cal.o [4]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800dcd1   0x58  Code  Lc  quaternion_supervisor.o [4]
+inv_generate_results    0x08006e29    0xc  Code  Gb  results_holder.o [1]
+inv_generate_vector_compass_cal
+                        0x0800db09   0xa4  Code  Gb  compass_vec_cal.o [4]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_get_6axis_quaternion
                         0x08006f35   0x16  Code  Gb  results_holder.o [1]
 inv_get_acc_state       0x08006e41    0x8  Code  Gb  results_holder.o [1]
@@ -1021,6 +1802,9 @@ inv_get_linear_accel    0x08007081   0x42  Code  Gb  results_holder.o [1]
 inv_get_local_field     0x08006ebb   0x14  Code  Gb  results_holder.o [1]
 inv_get_mag_accuracy    0x08006c93   0x16  Code  Gb  data_builder.o [1]
 inv_get_magnetic_disturbance_state
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800bea9    0xc  Code  Gb  mag_disturb.o [4]
 inv_get_motion_state    0x08006e49   0x14  Code  Gb  results_holder.o [1]
 inv_get_quaternion      0x08006f4b   0x38  Code  Gb  results_holder.o [1]
@@ -1046,12 +1830,50 @@ inv_init_magnetic_disturbance
 inv_init_maxmin         0x0800c765   0x6c  Code  Gb  fast_no_motion.o [4]
 inv_init_mpl            0x0800d597   0x5e  Code  Gb  mpl.o [1]
 inv_init_quaternion     0x0800d871   0x24  Code  Gb  quaternion_supervisor.o [4]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800c989    0xc  Code  Gb  mag_disturb.o [4]
+inv_get_motion_state    0x08006ca5   0x14  Code  Gb  results_holder.o [1]
+inv_get_quaternion      0x08006da7   0x38  Code  Gb  results_holder.o [1]
+inv_get_quaternion_set  0x08006ddf   0x4a  Code  Gb  results_holder.o [1]
+inv_get_sensor_type_quat
+                        0x0800b729   0x34  Code  Gb  eMPL_outputs.o [1]
+inv_got_compass_bias    0x08006eb1    0x6  Code  Gb  results_holder.o [1]
+inv_gtc                 0x200003e0  0x1c4  Data  Lc  gyro_tc.o [4]
+inv_gtc_data_cb         0x0800bef9  0x44c  Code  Lc  gyro_tc.o [4]
+inv_gtc_load            0x08009a6d   0x34  Code  Lc  gyro_tc.o [4]
+inv_gtc_store           0x0800c765   0x34  Code  Lc  gyro_tc.o [4]
+inv_init_9x_fusion      0x0800bb29   0x3c  Code  Gb  fusion_9axis.o [4]
+inv_init_check_sample_balance_parameter
+                        0x0800bed1   0x28  Code  Gb  accel_auto_cal.o [4]
+inv_init_data_builder   0x08006237   0x46  Code  Gb  data_builder.o [1]
+inv_init_eMPL_outputs   0x0800b873   0x16  Code  Lc  eMPL_outputs.o [1]
+inv_init_fast_nomot     0x0800bb65   0x64  Code  Gb  fast_no_motion.o [4]
+inv_init_gyro_ts        0x0800bbc9   0x38  Code  Gb  gyro_tc.o [4]
+inv_init_magnetic_disturbance
+                        0x0800bc6d   0x4c  Code  Gb  mag_disturb.o [4]
+inv_init_maxmin         0x0800be29   0x6c  Code  Gb  fast_no_motion.o [4]
+inv_init_mpl            0x0800b8d3   0x5e  Code  Gb  mpl.o [1]
+inv_init_quaternion     0x0800bb05   0x24  Code  Gb  quaternion_supervisor.o [4]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_init_results_holder
                         0x08006feb   0x4e  Code  Gb  results_holder.o [1]
 inv_init_start_manager  0x08007969   0x16  Code  Gb  start_manager.o [1]
 inv_init_storage_manager
                         0x080070e5   0x1c  Code  Gb  storage_manager.o [1]
 inv_init_vector_compass_cal
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800d96d   0x6c  Code  Gb  compass_vec_cal.o [4]
 inv_magnetic_disturbance_process
                         0x0800df49   0x36  Code  Gb  mag_disturb.o [4]
@@ -1061,6 +1883,31 @@ inv_orientation_matrix_to_scalar
 inv_perform_9x_fusion   0x0800b8e9  0x39c  Code  Gb  fusion_9axis.o [4]
 inv_process_9x_sensor_fusion_cb
                         0x0800dd91   0x98  Code  Gb  fusion_9axis.o [4]
+=======
+                        0x0800bc01   0x6c  Code  Gb  compass_vec_cal.o [4]
+inv_magnetic_disturbance_process
+=======
+                        0x0800bc01   0x6c  Code  Gb  compass_vec_cal.o [4]
+inv_magnetic_disturbance_process
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800bc01   0x6c  Code  Gb  compass_vec_cal.o [4]
+inv_magnetic_disturbance_process
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800dd69   0x36  Code  Gb  mag_disturb.o [4]
+inv_normalize_quat      0x0800b095   0xea  Code  Lc  quaternion_supervisor.o [4]
+inv_orientation_matrix_to_scalar
+                        0x080076bb   0x2a  Code  Gb  ml_math_func.o [1]
+inv_perform_9x_fusion   0x0800c3c9  0x39c  Code  Gb  fusion_9axis.o [4]
+inv_process_9x_sensor_fusion_cb
+                        0x0800dbb1   0x98  Code  Gb  fusion_9axis.o [4]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_process_compass_only_cal
                         0x08007c91  0x9d0  Code  Gb  compass_vec_cal.o [4]
 inv_q29_mult            0x08007269   0x1e  Code  Gb  ml_math_func.o [1]
@@ -1088,11 +1935,31 @@ inv_reset_compass_soft_iron_matrix
 inv_reset_data_collection
                         0x080091b9   0x50  Code  Gb  compass_vec_cal.o [4]
 inv_reset_min_max_gyro_accel_statistics
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800c4cd   0x34  Code  Gb  fast_no_motion.o [4]
 inv_reset_packet        0x0800c3d5   0x2c  Code  Lc  fast_no_motion.o [4]
 inv_row_2_scale         0x08007801   0x5e  Code  Lc  ml_math_func.o [1]
 inv_sensor_data_preprocess
                         0x0800c205   0x9c  Code  Gb  fast_no_motion.o [4]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800cfad   0x34  Code  Gb  fast_no_motion.o [4]
+inv_reset_packet        0x0800ceb5   0x2c  Code  Lc  fast_no_motion.o [4]
+inv_row_2_scale         0x0800765d   0x5e  Code  Lc  ml_math_func.o [1]
+inv_sensor_data_preprocess
+                        0x0800cce5   0x9c  Code  Gb  fast_no_motion.o [4]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_set_accel_orientation_and_scale
                         0x08006573   0x14  Code  Gb  data_builder.o [1]
 inv_set_accel_sample_rate
@@ -1115,8 +1982,19 @@ inv_set_compass_soft_iron_input_data
 inv_set_compass_state   0x08007061    0x6  Code  Gb  results_holder.o [1]
 inv_set_contiguous      0x08006b27  0x108  Code  Lc  data_builder.o [1]
 inv_set_default_number_of_samples
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800da25   0x3c  Code  Gb  fast_no_motion.o [4]
 inv_set_gyro_bias       0x08006677   0x84  Code  Gb  data_builder.o [1]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800be95   0x3c  Code  Gb  fast_no_motion.o [4]
+inv_set_gyro_bias       0x080064d3   0x84  Code  Gb  data_builder.o [1]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_set_gyro_orientation_and_scale
                         0x08006427   0x14  Code  Gb  data_builder.o [1]
 inv_set_gyro_sample_rate
@@ -1128,6 +2006,9 @@ inv_set_motion_state    0x08006e5d   0x5e  Code  Gb  results_holder.o [1]
 inv_set_terms           0x08008715  0x30a  Code  Gb  compass_vec_cal.o [4]
 inv_sort_order_4_T      0x0800a1d9   0x98  Code  Gb  accel_auto_cal.o [4]
 inv_start_9x_sensor_fusion
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800e18d   0x10  Code  Gb  fusion_9axis.o [4]
 inv_start_cb            0x20001158   0x54  Data  Lc  start_manager.o [1]
 inv_start_eMPL_outputs  0x0800d453   0x10  Code  Lc  eMPL_outputs.o [1]
@@ -1137,9 +2018,39 @@ inv_start_magnetic_disturbance
                         0x0800e1ad   0x10  Code  Gb  mag_disturb.o [4]
 inv_start_mpl           0x0800d5f5   0x22  Code  Gb  mpl.o [1]
 inv_start_quaternion    0x0800dfb1   0x30  Code  Gb  quaternion_supervisor.o [4]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800dfdd   0x10  Code  Gb  fusion_9axis.o [4]
+inv_start_cb            0x20001158   0x54  Data  Lc  start_manager.o [1]
+inv_start_eMPL_outputs  0x0800b863   0x10  Code  Lc  eMPL_outputs.o [1]
+inv_start_fast_nomot    0x0800dd29   0x40  Code  Gb  fast_no_motion.o [4]
+inv_start_gyro_tc       0x0800dfed   0x10  Code  Gb  gyro_tc.o [4]
+inv_start_magnetic_disturbance
+                        0x0800dffd   0x10  Code  Gb  mag_disturb.o [4]
+inv_start_mpl           0x0800b931   0x22  Code  Gb  mpl.o [1]
+inv_start_quaternion    0x0800de01   0x30  Code  Gb  quaternion_supervisor.o [4]
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+                        0x0800dfdd   0x10  Code  Gb  fusion_9axis.o [4]
+inv_start_cb            0x20001158   0x54  Data  Lc  start_manager.o [1]
+inv_start_eMPL_outputs  0x0800b863   0x10  Code  Lc  eMPL_outputs.o [1]
+inv_start_fast_nomot    0x0800dd29   0x40  Code  Gb  fast_no_motion.o [4]
+inv_start_gyro_tc       0x0800dfed   0x10  Code  Gb  gyro_tc.o [4]
+inv_start_magnetic_disturbance
+                        0x0800dffd   0x10  Code  Gb  mag_disturb.o [4]
+inv_start_mpl           0x0800b931   0x22  Code  Gb  mpl.o [1]
+inv_start_quaternion    0x0800de01   0x30  Code  Gb  quaternion_supervisor.o [4]
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 inv_start_results_holder
                         0x08006fd9   0x12  Code  Gb  results_holder.o [1]
 inv_start_vector_compass_cal
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                         0x0800e1bd   0x10  Code  Gb  compass_vec_cal.o [4]
 inv_store_gaming_quaternion
                         0x08006dbd   0x2e  Code  Gb  results_holder.o [1]
@@ -1156,6 +2067,34 @@ memmove                 0x0800b865    0xc  Code  Gb  memmove.o [6]
 memset                  0x0800a1b5   0x14  Code  Gb  memset.o [3]
 mh                      0x20001234    0x4  Data  Lc  message_layer.o [1]
 mlMatrixVectorMult      0x080078fb   0x4a  Code  Gb  ml_math_func.o [1]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+                        0x0800e00d   0x10  Code  Gb  compass_vec_cal.o [4]
+inv_store_gaming_quaternion
+                        0x08006c19   0x2e  Code  Gb  results_holder.o [1]
+inv_track_dip_angle     0x0800d841   0x9c  Code  Gb  mag_disturb.o [4]
+localeconv              0x0800494f   0x16  Code  Gb  localeconv.o [3]
+log                     0x0800a21b    0x6  Code  Gb  log.o [5]
+mag_disturb             0x20001018   0xb8  Data  Gb  mag_disturb.o [4]
+main                    0x0800b309  0x1c8  Code  Gb  main.o [1]
+malloc                  0x08003ef5   0xac  Code  Gb  xxmemxmalloc.o [3]
+memchr                  0x08003e91         Code  Gb  memchr.o [6]
+memcpy                  0x080085a9    0xc  Code  Gb  memcpy.o [3]
+memmove                 0x0800c345    0xc  Code  Gb  memmove.o [6]
+memset                  0x0800a045   0x14  Code  Gb  memset.o [3]
+mh                      0x20001258    0x4  Data  Lc  message_layer.o [1]
+mlMatrixVectorMult      0x08007757   0x4a  Code  Gb  ml_math_func.o [1]
+motion_processor_init   0x0800b4f5   0x36  Code  Gb  main.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 mpl_key                 0x20000168    0x4  Data  Gb  main.o [1]
 mpu_configure_fifo      0x08000af1   0x94  Code  Gb  inv_mpu.o [1]
 mpu_get_accel_fsr       0x080007f5   0x46  Code  Gb  inv_mpu.o [1]
@@ -1165,6 +2104,9 @@ mpu_get_gyro_fsr        0x08000721   0x3c  Code  Gb  inv_mpu.o [1]
 mpu_get_sample_rate     0x0800097d   0x20  Code  Gb  inv_mpu.o [1]
 mpu_get_temperature     0x08000473   0xa0  Code  Gb  inv_mpu.o [1]
 mpu_init                0x080001b1  0x172  Code  Gb  inv_mpu.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 mpu_int_checkNewCompassReadingTimer
                         0x0800d24d   0x22  Code  Gb  mpu_int.o [1]
 mpu_int_checkNewTemperatureReadingTimer
@@ -1178,6 +2120,12 @@ mpu_int_sensor_and_library_setup
                         0x0800d179    0xc  Code  Gb  mpu_int.o [1]
 mpu_int_sensor_init     0x0800d12d   0x16  Code  Gb  mpu_int.o [1]
 mpu_int_sensor_setup    0x0800d219   0x34  Code  Lc  mpu_int.o [1]
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 mpu_load_firmware       0x08001131   0xe8  Code  Gb  inv_mpu.o [1]
 mpu_lp_accel_mode       0x08000323  0x150  Code  Gb  inv_mpu.o [1]
 mpu_read_fifo_stream    0x08000d3f   0xe6  Code  Gb  inv_mpu.o [1]
@@ -1194,12 +2142,33 @@ mpu_set_lpf             0x080008d9   0xa4  Code  Gb  inv_mpu.o [1]
 mpu_set_sample_rate     0x080009a1   0xdc  Code  Gb  inv_mpu.o [1]
 mpu_set_sensors         0x08000b89  0x1b6  Code  Gb  inv_mpu.o [1]
 mpu_write_mem           0x08001019   0x8a  Code  Gb  inv_mpu.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 my_read_from_mpl        0x0800d03b   0x32  Code  Gb  main.o [1]
 platform_init           0x0800d0e5   0x36  Code  Gb  main.o [1]
 r1.6050                 0x2000016c    0x4  Data  Lc  compass_vec_cal.o [4]
 r2.6051                 0x20000170    0x4  Data  Lc  compass_vec_cal.o [4]
 r3.6052                 0x20000174    0x4  Data  Lc  compass_vec_cal.o [4]
 reg                     0x0800e010   0x2c  Data  Gb  inv_mpu.o [1]
+=======
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+my_read_from_mpl        0x0800b4d1   0x1c  Code  Gb  main.o [1]
+platform_init           0x0800b64b   0x36  Code  Gb  main.o [1]
+r1.6050                 0x2000016c    0x4  Data  Lc  compass_vec_cal.o [4]
+r2.6051                 0x20000170    0x4  Data  Lc  compass_vec_cal.o [4]
+r3.6052                 0x20000174    0x4  Data  Lc  compass_vec_cal.o [4]
+reg                     0x0800de30   0x2c  Data  Gb  inv_mpu.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 rh                      0x200010d0   0x88  Data  Lc  results_holder.o [1]
 s9axis                  0x20000c28  0x138  Data  Wk  fusion_9axis.o [4]
 sStartAddress           0x08001df6    0x2  Data  Lc  inv_mpu_dmp_motion_driver.o [1]
@@ -1213,9 +2182,22 @@ sqrt                    0x08009a8d         Code  Gb  sqrt.o [5]
 sqrtf                   0x08007acd         Code  Gb  sqrtf.o [5]
 sqrtl                   0x08009a8d         Code  Gb  sqrt.o [5]
 st                      0x200000fc   0x38  Data  Lc  inv_mpu.o [1]
+<<<<<<< HEAD
 strchr                  0x08003fe5         Code  Gb  strchr.o [6]
 strlen                  0x08003ffd         Code  Gb  strlen.o [6]
 test                    0x0800df80   0x30  Data  Gb  inv_mpu.o [1]
+=======
+stm32l_get_clock_ms     0x08001d37   0x14  Code  Gb  app_config.o [1]
+strchr                  0x08003e41         Code  Gb  strchr.o [6]
+strlen                  0x08003e59         Code  Gb  strlen.o [6]
+test                    0x0800dda0   0x30  Data  Gb  inv_mpu.o [1]
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 vc                      0x20000610  0x1a8  Data  Wk  compass_vec_cal.o [4]
 vsprintf                0x08002b8d   0x2c  Code  Gb  vsprintf.o [3]
 
@@ -1228,9 +2210,27 @@ vsprintf                0x08002b8d   0x2c  Code  Gb  vsprintf.o [3]
 [6] = rt7M_tl.a
 [7] = shb_l.a
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   54 430 bytes of readonly  code memory
    3 773 bytes of readonly  data memory
    6 224 bytes of readwrite data memory
+=======
+  53 954 bytes of readonly  code memory
+   3 837 bytes of readonly  data memory
+   6 240 bytes of readwrite data memory
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+  53 954 bytes of readonly  code memory
+   3 837 bytes of readonly  data memory
+   6 240 bytes of readwrite data memory
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+  53 954 bytes of readonly  code memory
+   3 837 bytes of readonly  data memory
+   6 240 bytes of readwrite data memory
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 
 Errors: none
 Warnings: 1

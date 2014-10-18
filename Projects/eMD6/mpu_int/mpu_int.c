@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 #include "mpu_int.h"
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
@@ -301,3 +304,9 @@ void mpu_int_check_timers_flags(uint8_t * new_temp_flag,
 #endif
 }
   
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv

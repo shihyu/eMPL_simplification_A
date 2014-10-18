@@ -264,8 +264,19 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=594176
 -D_GOANNA=1
+<<<<<<< HEAD
 -D__DATE__="Oct 19 2014"
 -D__TIME__="00:03:59"
+=======
+-D__DATE__="Oct 15 2014"
+-D__TIME__="14:26:32"
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

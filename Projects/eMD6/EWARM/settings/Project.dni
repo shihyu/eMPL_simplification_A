@@ -9,7 +9,19 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 Checksum=-1565721204
+=======
+Checksum=838925239
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+Checksum=838925239
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
+=======
+Checksum=838925239
+>>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -45,6 +57,14 @@ Fmt1=short[3]	3	0
 [watch_formats]
 Fmt0={W}0:compass_short	3	3
 Fmt1={W}0:fifo_count	4	0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
 [Trace2]
 Enabled=0
 ShowSource=0
@@ -79,6 +99,9 @@ Count=1
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 A0=_ "../mpl/compass_vec_cal.c" ""
 A1=_ "../mpl/fusion_9axis.c" ""
@@ -86,14 +109,3 @@ A2=_ "../mpl/mag_disturb.c" ""
 A3=_ "../mpl/quaternion_supervisor.c" ""
 Count=4
 SuppressDialog=1
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=3
-Graph=0
-Symbiont=0
-Exclusions=
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
