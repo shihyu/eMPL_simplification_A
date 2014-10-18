@@ -16,6 +16,6 @@
 void TimingDelay_Decrement(void);
 void TimeStamp_Increment(void);
 void Delay(__IO uint32_t nTime);
-int stm32l_get_clock_ms(unsigned long *count);
+uint8_t app_config_get_clock_ms(unsigned long *count);
 
 #endif /* APP_CONFIG_H */

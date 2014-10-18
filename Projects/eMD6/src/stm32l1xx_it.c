@@ -25,6 +25,7 @@
 #include "stm32l1xx_it.h"
 #include "app_config.h"
 #include "main.h"
+#include "exti.h"
 /** @addtogroup Template_Project
   * @{
   */
@@ -189,7 +190,7 @@ void EXTI1_IRQHandler(void)
 {
   /* Handle new gyro*/
   gyro_data_ready_cb();
-  EXTI_ClearITPendingBit(EXTI_Line1);
+  EXTI_INT_ExitFromInterupt();
 }
 
 

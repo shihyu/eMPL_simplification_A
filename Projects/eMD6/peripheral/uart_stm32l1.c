@@ -1,4 +1,10 @@
 
+
+#ifdef STM32L1XX_MD
+
+
+
+
 #include <stdio.h>
 #include "stm32l1xx.h"
 #include "uart.h"
@@ -97,3 +103,4 @@ int fputchar(int ch )
   return ch;
 }
 
+#endif

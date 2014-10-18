@@ -6,6 +6,7 @@
   <configuration>
     <name>Debug</name>
     <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\eMD6_reorganized.pbd</file>
       <file>$PROJ_DIR$\Debug\Obj\main.o</file>
       <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
       <file>$PROJ_DIR$\main.c</file>
@@ -27,7 +28,7 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 10</file>
+          <file> 11</file>
         </tool>
       </outputs>
     </file>
@@ -36,11 +37,11 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 12</file>
+          <file> 13</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 0</file>
+          <file> 1</file>
         </tool>
       </outputs>
     </file>
@@ -49,17 +50,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 12</file>
+          <file> 13</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 0</file>
+          <file> 1</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 9 3 6 4 7 1 14 8 5 11</file>
+          <file> 10 4 7 5 8 2 15 9 6 12</file>
         </tool>
       </inputs>
     </file>

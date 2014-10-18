@@ -1,5 +1,5 @@
 #include "app_config.h"
-  
+#include "stdint.h"
   
   
 static volatile uint32_t TimingDelay;
@@ -40,7 +40,7 @@ void Delay(uint32_t nTime)
 
 
 
-int stm32l_get_clock_ms(unsigned long *count)
+uint8_t app_config_get_clock_ms(unsigned long *count)
 {
     if (!count)
         return 1;

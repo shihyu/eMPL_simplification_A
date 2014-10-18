@@ -1176,22 +1176,22 @@
   <group>
     <name>Peripherals</name>
     <file>
-      <name>$PROJ_DIR$\..\peripheral\gpio.c</name>
+      <name>$PROJ_DIR$\..\peripheral\exti.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\peripheral\gpio.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\peripheral\i2c.c</name>
+      <name>$PROJ_DIR$\..\peripheral\exti_stm32l1.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\peripheral\i2c.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\peripheral\uart.c</name>
+      <name>$PROJ_DIR$\..\peripheral\i2c_stm32l1.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\peripheral\uart.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\peripheral\uart_stm32l1.c</name>
     </file>
   </group>
   <group>

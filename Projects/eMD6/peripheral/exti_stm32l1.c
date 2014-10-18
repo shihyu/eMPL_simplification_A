@@ -3,7 +3,7 @@ File    : Gpio.c
 Purpose : 
 ********************************** Includes ***********************************/
 #include "stm32l1xx.h"
-#include "GPIO.h"
+#include "exti.h"
 
 /********************************* Defines ************************************/
 
@@ -19,7 +19,7 @@ Purpose :
 /********************************* Prototypes *********************************/
 
 /***********************************Functions *********************************/
-void GPIO_Config(void)
+void EXTI_INT_Config(void)
 {
 
   GPIO_InitTypeDef   GPIO_InitStructure;
@@ -59,7 +59,7 @@ void GPIO_Config(void)
   NVIC_Init(&NVIC_InitStructure);
 }
 
-void EnableInvInterrupt(void)
+void EXTI_INT_EnableInvInterrupt(void)
 {
   EXTI_InitTypeDef   EXTI_InitStructure;
   /* Configure EXTI Line1 */
@@ -69,7 +69,7 @@ void EnableInvInterrupt(void)
   EXTI_InitStructure.EXTI_LineCmd = ENABLE;
   EXTI_Init(&EXTI_InitStructure);
 }
-void DisableInvInterrupt(void)
+void EXTI_INT_DisableInvInterrupt(void)
 {
   EXTI_InitTypeDef   EXTI_InitStructure;
     /* Configure EXTI Line1 */
@@ -81,10 +81,8 @@ void DisableInvInterrupt(void)
   EXTI_ClearITPendingBit(INVEN_INT_EXTI_LINE);
 }
 
-void InvIntHandler(void)
+void EXTI_INT_ExitFromInterupt(void)
 {
-
   /* Clear the EXTI line 1 pending bit */
    EXTI_ClearITPendingBit(INVEN_INT_EXTI_LINE);
-
 }

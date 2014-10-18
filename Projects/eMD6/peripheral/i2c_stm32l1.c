@@ -2,7 +2,15 @@
 File    : i2c.c
 Purpose : I2c 3 to communicate with the sensors
 Author  : 
-********************************** Includes ***********************************/
+*/
+
+
+#ifdef STM32L1XX_MD
+
+
+/********************************** Includes ***********************************/
+
+
 #include <stdio.h>
 #include "stm32l1xx.h"
 #include "i2c.h"
@@ -346,3 +354,4 @@ int Sensors_I2C_ReadRegister_swap(unsigned char slave_addr,unsigned char reg_add
 }
 
 
+#endif

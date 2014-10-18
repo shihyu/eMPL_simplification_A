@@ -7,7 +7,7 @@
 
 #include "uart.h"
 #include "i2c.h"
-#include "gpio.h"
+#include "exti.h"
 #include "main.h"
 
 #include "mpu_int.h"
@@ -31,27 +31,7 @@
 #define MOTION          (0)
 #define NO_MOTION       (1)
 
-
-struct rx_s {
-    unsigned char header[3];
-    unsigned char cmd;
-};
-struct hal_s {
-    unsigned char lp_accel_mode;
-    unsigned char sensors;
-    unsigned char dmp_on;
-    unsigned char wait_for_tap;
-    volatile unsigned char new_gyro;
-    unsigned char motion_int_mode;
-    unsigned long no_dmp_hz;
-    unsigned long next_pedo_ms;
-    unsigned long next_temp_ms;
-    unsigned long next_compass_ms;
-    unsigned int report;
-    unsigned short dmp_features;
-    struct rx_s rx;
-};
-static struct hal_s hal = {0};
+#define PRINT_ACCEL     1
 
 
 unsigned char *mpl_key = (unsigned char*)"eMPL 5.1";
@@ -59,46 +39,35 @@ unsigned char *mpl_key = (unsigned char*)"eMPL 5.1";
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-
-
-
 /* Private function prototypes -----------------------------------------------*/
 
-void hal_variable_init(void);
 void my_read_from_mpl(void);
 void RCC_Configuration(void);
-void Init_GPIOs (void);
+void hardware_init(void);
 void platform_init(void);
 
 
+/* Global flags --------------------------------------------------------------*/
+
+static uint8_t flags_dmp_on = 0u;
+static uint8_t flags_sensors_on = 0u;
+static volatile uint8_t flags_new_data = 0u;
 
 
+    
 /*******************************************************************************/
 
 
                                   
 int main(void)
 { 
-   
-    uint8_t new_temp = 0;
-    unsigned long timestamp;
-
-#ifdef COMPASS_ENABLED
-    unsigned char new_compass = 0;
-#endif
-    
-    
     platform_init();
     
-    MPL_LOGE("Init -> \n");  
-     
-        
     if (0u != mpu_int_sensor_init()) 
     {
         MPL_LOGE("Could not initialize sensor.\n");
     }
-    
-    
+        
     if (0u != mpu_int_library_init()) 
     {
         MPL_LOGE("Could not initialize libraries.\n");
@@ -106,50 +75,44 @@ int main(void)
     
     mpu_int_sensor_and_library_setup();
     
-
-    hal_variable_init();
-    
-    hal.dmp_on = (0u == mpu_int_dmp_setup(&hal.dmp_features))? 1u : 0u;
-    
-    
-     /* Compass reads are handled by scheduler. */
-    stm32l_get_clock_ms(&timestamp);
-    
- 
-    MPL_LOGE(" -> OK\n"); 
       
-      
+    
+     /* Initialize global flags */
+#ifdef COMPASS_ENABLED
+    flags_sensors_on = ACCEL_ON | GYRO_ON | COMPASS_ON;
+#else
+    flags_sensors_on = ACCEL_ON | GYRO_ON;
+#endif
+    
+  
+    if (0u == mpu_int_dmp_setup()) 
+    {
+      flags_dmp_on = 1u;
+    }
+    else
+    {
+      flags_dmp_on = 0u;
+      MPL_LOGE("Could not initialize DMP.\n");
+    }
+    
+    
+    
+          
     while(1)
     {
-      unsigned long sensor_timestamp;
-      int new_data = 0;
+      uint8_t new_data_flag = 0u;
+      uint8_t new_temp_flag = 0u;
+      uint8_t new_compass_flag = 0u;   
       
+      unsigned long sensor_timestamp = 0u;
 
-      /* parsing serial input deleted */
-    
-    stm32l_get_clock_ms(&timestamp);     /* Compass reads are handled by scheduler. */
 
-#ifdef COMPASS_ENABLED
-        /* We're not using a data ready interrupt for the compass, so we'll
-         * make our compass reads timer-based instead.
-         */
-        if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
-            hal.new_gyro && (hal.sensors & COMPASS_ON)) {
-            hal.next_compass_ms = timestamp + MPU_INT_COMPASS_READ_MS;
-            new_compass = 1;
-        }
-#endif
-        /* Temperature data doesn't need to be read with every gyro sample.
-         * Let's make them timer-based like the compass reads.
-         */
-        if (timestamp > hal.next_temp_ms) {
-            hal.next_temp_ms = timestamp + MPU_INT_TEMP_READ_MS;
-            new_temp = 1;
-        }
+      mpu_int_check_timers_flags(&new_temp_flag,&new_compass_flag);
 
-      if (hal.sensors || hal.new_gyro) 
+          
+      if (flags_sensors_on || flags_new_data) 
       {
-          if (hal.new_gyro && hal.dmp_on) 
+          if (flags_new_data && flags_dmp_on) 
           {
               short gyro[3], accel_short[3], sensors;
               unsigned char more;
@@ -171,16 +134,16 @@ int main(void)
              
              
               if (!more)
-                  hal.new_gyro = 0;
+                  flags_new_data = 0;
               
               /* go back here */
               
               if (sensors & INV_XYZ_GYRO) {
                   /* Push the new data to the MPL. */
                   inv_build_gyro(gyro, sensor_timestamp);
-                  new_data = 1;
-                  if (new_temp) {
-                      new_temp = 0;
+                  new_data_flag = 1;
+                  if (new_temp_flag) {
+                      new_temp_flag = 0;
                       /* Temperature only used for gyro temp comp. */
                       mpu_get_temperature(&temperature, &sensor_timestamp);
                       inv_build_temp(temperature, sensor_timestamp);
@@ -191,20 +154,20 @@ int main(void)
                   accel[1] = (long)accel_short[1];
                   accel[2] = (long)accel_short[2];
                   inv_build_accel(accel, 0, sensor_timestamp);
-                  new_data = 1;
+                  new_data_flag = 1;
               }
           
           
               if (sensors & INV_WXYZ_QUAT) {
                   inv_build_quat(quat, 0, sensor_timestamp);
-                  new_data = 1;
+                  new_data_flag = 1;
               }
           }
   #ifdef COMPASS_ENABLED
-          if (new_compass) {
+          if (new_compass_flag) {
               short compass_short[3];
               long compass[3];
-              new_compass = 0;
+              new_compass_flag = 0;
               /* For any MPU device with an AKM on the auxiliary I2C bus, the raw
                * magnetometer registers are copied to special gyro registers.
                */
@@ -219,10 +182,12 @@ int main(void)
                    */
                   inv_build_compass(compass, 0, sensor_timestamp);
               }
-              new_data = 1;
+              new_data_flag = 1;
           }
   #endif
-          if (new_data) {
+          
+          
+          if (new_data_flag) {
               inv_execute_on_data();
               /* This function reads bias-compensated sensor data and sensor
                * fusion outputs from the MPL. The outputs are formatted as seen
@@ -239,6 +204,16 @@ int main(void)
 
 }
 
+
+/* Every time new gyro data is available, this function is called in an
+ * ISR context. In this example, it sets a flag protecting the FIFO read
+ * function.
+ */
+void gyro_data_ready_cb(void)
+{
+    flags_new_data = 1;
+}
+
 /*---------------------------------------------------------------------------*/
 void my_read_from_mpl(void)
 {
@@ -249,71 +224,16 @@ void my_read_from_mpl(void)
     if (inv_get_sensor_type_quat(data, &accuracy, (inv_time_t*)&timestamp)) {
         eMPL_send_quat(data);
     }
+    
+    if (PRINT_ACCEL) {
+        if (inv_get_sensor_type_accel(data, &accuracy, (inv_time_t*)&timestamp))
+            eMPL_send_data(PACKET_DATA_ACCEL, data);
+    }
+    
+    
 }
        
-
-/* Every time new gyro data is available, this function is called in an
- * ISR context. In this example, it sets a flag protecting the FIFO read
- * function.
- */
-void gyro_data_ready_cb(void)
-{
-    hal.new_gyro = 1;
-}
-
-
-
-
-void hal_variable_init(void)
-{
-  
-
-    /* Initialize HAL state variables. */
-#ifdef COMPASS_ENABLED
-    hal.sensors = ACCEL_ON | GYRO_ON | COMPASS_ON;
-#else
-    hal.sensors = ACCEL_ON | GYRO_ON;
-#endif
-    hal.dmp_on = 0;
-    hal.report = 0;
-    hal.rx.cmd = 0;
-    hal.next_pedo_ms = 0;
-    hal.next_compass_ms = 0;
-    hal.next_temp_ms = 0;
-    
-}
-    
-    
-/**
- * Configure the hardware of the Discovery board to link with the MPU
- */
-void platform_init(void)
-{
-  RCC_ClocksTypeDef RCC_Clocks;
-   /*!< At this stage the microcontroller clock setting is already configured, 
-       this is done through SystemInit() function which is called from startup
-       file (startup_stm32l1xx_md.s) before to branch to application main.
-       To reconfigure the default setting of SystemInit() function, refer to
-       system_stm32l1xx.c file
-     */ 
-
-  /* Configure Clocks for Application need */
-  RCC_Configuration();
-
-  /* Set internal voltage regulator to 1.8V */
-  PWR_VoltageScalingConfig(PWR_VoltageScaling_Range1);
-
-  /* Wait Until the Voltage Regulator is ready */
-  while (PWR_GetFlagStatus(PWR_FLAG_VOS) != RESET) ;
-  
-  /* Configure SysTick IRQ and SysTick Timer to generate interrupts every 1ms */
-  RCC_GetClocksFreq(&RCC_Clocks);
-  SysTick_Config(RCC_Clocks.HCLK_Frequency / 2000); 
-
-  /* Init I/O ports */
-  Init_GPIOs();  //Initialize the I2C, UART, Intterupts, and the Green and Blue LEDs
-}
-		
+    	
 
 /**
   * @brief  Configures the different system clocks.
@@ -348,62 +268,50 @@ void RCC_Configuration(void)
 
 }
 
-
-void  Init_GPIOs (void)
+/**
+ * Configure the hardware of the Discovery board to link with the MPU
+ */
+void platform_init(void)
 {
-  //GPIO_InitTypeDef GPIO_InitStructure;
+  RCC_ClocksTypeDef RCC_Clocks;
+   /*!< At this stage the microcontroller clock setting is already configured, 
+       this is done through SystemInit() function which is called from startup
+       file (startup_stm32l1xx_md.s) before to branch to application main.
+       To reconfigure the default setting of SystemInit() function, refer to
+       system_stm32l1xx.c file
+     */ 
+
+  /* Configure Clocks for Application need */
+  RCC_Configuration();
+
+  /* Set internal voltage regulator to 1.8V */
+  PWR_VoltageScalingConfig(PWR_VoltageScaling_Range1);
+
+  /* Wait Until the Voltage Regulator is ready */
+  while (PWR_GetFlagStatus(PWR_FLAG_VOS) != RESET) ;
   
-    /* Enable GPIOs clock */ 	
-  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | 
-                        RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD | 
-                        RCC_AHBPeriph_GPIOE | RCC_AHBPeriph_GPIOH, ENABLE);
-  
-  
+  /* Configure SysTick IRQ and SysTick Timer to generate interrupts every 1ms */
+  RCC_GetClocksFreq(&RCC_Clocks);
+  SysTick_Config(RCC_Clocks.HCLK_Frequency / 2000); 
+
+  /* Init I/O ports */
+  hardware_init();  //Initialize the I2C, UART, Intterupts, and the Green and Blue LEDs
+}
+
+
+void  hardware_init (void)
+{
   //Configure I2C
   I2C_Config();
   
   //Configure Interrupts
-  GPIO_Config();
+  EXTI_INT_Config();
   
   //Configure UART
   USART_Config();
-  
-/* Configure the GPIO_LED pins  LD3 & LD4*/
-  /*GPIO_InitStructure.GPIO_Pin = LD_GREEN_GPIO_PIN | LD_BLUE_GPIO_PIN;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-  GPIO_Init(LD_GPIO_PORT, &GPIO_InitStructure);
-  GPIO_LOW(LD_GPIO_PORT, LD_GREEN_GPIO_PIN);	
-  GPIO_LOW(LD_GPIO_PORT, LD_BLUE_GPIO_PIN);*/
-
 }  
 
 
 
-#ifdef  USE_FULL_ASSERT
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
-void assert_failed(uint8_t* file, uint32_t line)
-{ 
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-
-  /* Infinite loop */
-  while (1)
-  {
-    
-    
-  }
-}
-
-#endif
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

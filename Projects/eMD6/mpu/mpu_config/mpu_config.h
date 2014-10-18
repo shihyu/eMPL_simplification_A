@@ -20,7 +20,7 @@ Global configuration for MPU9250/MPU6050 driver and hal layer
 #define mpu_config_i2c_write   Sensors_I2C_WriteRegister_swap //Sensors_I2C_WriteRegister
 #define mpu_config_i2c_read    Sensors_I2C_ReadRegister_swap  
 #define mpu_config_delay_ms    Delay
-#define mpu_config_get_ms      stm32l_get_clock_ms
+#define mpu_config_get_ms      app_config_get_clock_ms
 #define mpu_config_log_i       MPL_LOGI
 #define mpu_config_log_e       MPL_LOGE
 #define mpu_config_min(a,b)    ((a < b) ? a : b)

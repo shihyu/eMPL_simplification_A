@@ -61,9 +61,10 @@ static struct platform_data_s compass_pdata = {
 uint16_t mpu_int_sensor_init(void);
 uint16_t mpu_int_library_init(void);
 void mpu_int_sensor_and_library_setup(void);
-uint8_t mpu_int_dmp_setup(uint16_t * flags_of_dmp);
-
-
+uint8_t mpu_int_dmp_setup(void);
+uint8_t mpu_int_checkNewCompassReadingTimer(uint32_t timestamp);
+uint8_t mpu_int_checkNewTemperatureReadingTimer(uint32_t timestamp);
+void mpu_int_check_timers_flags(uint8_t * new_temp_flag, uint8_t * new_compass_flag);
 
 
 #endif  /* #ifndef _MPU_CONFIG_H_ */
