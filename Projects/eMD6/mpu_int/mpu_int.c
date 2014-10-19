@@ -246,19 +246,22 @@ static void mpu_int_sensor_setup(void)
 /* We're not using a data ready interrupt for the compass, so we'll
  * make our compass reads timer-based instead.
  */
-uint8_t mpu_int_checkNewCompassReadingTimer(uint32_t timestamp)
+uint8_t mpu_int_checkNewCompassReadingTimer(void)
 {
   static uint32_t next_compass_ms = 0u;
+  unsigned long timestamp;
   uint8_t ret = 0xFFu;
-  
+   
+  app_config_get_clock_ms(&timestamp);     
+    
   if( timestamp > next_compass_ms)
   {
-    ret = 0u;
+    ret = 1u;
     next_compass_ms = timestamp + MPU_INT_COMPASS_READ_MS;
   }
   else
   {
-    ret = 0xFFu;
+    ret = 0u;
   }
   
   return ret;
@@ -268,37 +271,28 @@ uint8_t mpu_int_checkNewCompassReadingTimer(uint32_t timestamp)
 /* Temperature data doesn't need to be read with every gyro sample.
  * Let's make them timer-based like the compass reads.
  */
-uint8_t mpu_int_checkNewTemperatureReadingTimer(uint32_t timestamp)
+uint8_t mpu_int_checkNewTemperatureReadingTimer(void)
 {
   static uint32_t next_temp_ms = 0u;
+  unsigned long timestamp;
   uint8_t ret = 0xFFu;
   
+  
+  app_config_get_clock_ms(&timestamp);    
+    
+    
   if(timestamp > next_temp_ms)
   {
-    ret = 0u;
+    ret = 1u;
     next_temp_ms = timestamp + MPU_INT_TEMP_READ_MS;
   }
   else
   {
-    ret = 0xFFu;
+    ret = 0u;
   }
   
   return ret;
 }
 
 
-void mpu_int_check_timers_flags(uint8_t * new_temp_flag,
-                                uint8_t * new_compass_flag)
-{
-  unsigned long timestamp = 0u;
-  
-  app_config_get_clock_ms(&timestamp);     /* Compass reads are handled by scheduler. */
-  *new_temp_flag = (0u == mpu_int_checkNewTemperatureReadingTimer(timestamp))?1u:0u;
-
-#ifdef COMPASS_ENABLED
-           
-  *new_compass_flag = (0u == mpu_int_checkNewCompassReadingTimer(timestamp))?1u:0u;
-        
-#endif
-}
   

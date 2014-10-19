@@ -25,9 +25,10 @@
         <ColumnWidth2>371</ColumnWidth2>
         <ColumnWidth3>92</ColumnWidth3>
       </Build>
+      <TerminalIO/>
     </Static>
     <Windows>
-      <Wnd2>
+      <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-31087-20234</Identity>
@@ -47,8 +48,8 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
-      <Wnd0>
+      </Wnd0>
+      <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-21928-22043</Identity>
@@ -58,7 +59,7 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd0>
+      </Wnd2>
     </Windows>
     <Editor>
       <Pane>
@@ -70,9 +71,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>100</YPos2>
-          <SelStart2>3178</SelStart2>
-          <SelEnd2>3178</SelEnd2>
+          <YPos2>80</YPos2>
+          <SelStart2>2664</SelStart2>
+          <SelEnd2>2664</SelEnd2>
         </Tab>
         <ActiveTab>0</ActiveTab>
         <Tab>
@@ -87,6 +88,18 @@
           <SelStart2>727</SelStart2>
           <SelEnd2>750</SelEnd2>
         </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\..\inc\app_config.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>17</YPos2>
+          <SelStart2>628</SelStart2>
+          <SelEnd2>628</SelEnd2>
+        </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Pane>
@@ -98,11 +111,10 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>256</SelStart2>
-          <SelEnd2>256</SelEnd2>
+          <YPos2>13</YPos2>
+          <SelStart2>1748</SelStart2>
+          <SelEnd2>1748</SelEnd2>
         </Tab>
-        <ActiveTab>0</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\..\mpu_int\mpu_int.c</Filename>
@@ -111,10 +123,11 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>151</YPos2>
-          <SelStart2>5668</SelStart2>
-          <SelEnd2>5690</SelEnd2>
+          <YPos2>16</YPos2>
+          <SelStart2>614</SelStart2>
+          <SelEnd2>614</SelEnd2>
         </Tab>
+        <ActiveTab>1</ActiveTab>
       </Pane>
       <Sizes>
         <Pane>
@@ -137,11 +150,14 @@
             </Toolbar-02E58B68>
           </Sizes>
         </Row0>
+        <Row1>
+          <Sizes/>
+        </Row1>
       </Top>
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd0>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -156,7 +172,7 @@
                 <sizeVertCX>197917</sizeVertCX>
                 <sizeVertCY>647737</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd0>
           </Sizes>
         </Row0>
       </Left>
@@ -168,7 +184,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd0>
+            <Wnd2>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -183,7 +199,7 @@
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>177462</sizeVertCY>
               </Rect>
-            </Wnd0>
+            </Wnd2>
           </Sizes>
         </Row0>
       </Bottom>

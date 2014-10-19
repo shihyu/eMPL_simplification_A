@@ -60,8 +60,7 @@ uint16_t mpu_int_sensor_init(void);
 uint16_t mpu_int_library_init(void);
 void mpu_int_sensor_and_library_setup(void);
 uint8_t mpu_int_dmp_setup(void);
-uint8_t mpu_int_checkNewCompassReadingTimer(uint32_t timestamp);
-uint8_t mpu_int_checkNewTemperatureReadingTimer(uint32_t timestamp);
-void mpu_int_check_timers_flags(uint8_t * new_temp_flag, uint8_t * new_compass_flag);
+uint8_t mpu_int_checkNewCompassReadingTimer(void);
+uint8_t mpu_int_checkNewTemperatureReadingTimer(void);
 
 #endif  /* #ifndef _MPU_CONFIG_H_ */

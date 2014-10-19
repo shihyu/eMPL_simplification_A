@@ -102,7 +102,6 @@ int main(void)
     inv_error_t result;
     unsigned char accel_range,  new_temp = 0;
     unsigned short gyro_sampling_rate, gyro_range;
-    unsigned long timestamp;
     struct int_param_s int_param;
 
 #ifdef COMPASS_ENABLED
@@ -113,8 +112,6 @@ int main(void)
     
     platform_init();
     
-    MPL_LOGE("Init -> \n");  
-     
     result = mpu_int_sensor_init();
     if (result) 
     {
@@ -135,36 +132,24 @@ int main(void)
      hal.dmp_on = (0u == mpu_int_dmp_setup())? 1u : 0u;
     
       
-      MPL_LOGE(" -> OK\n"); 
-      
-      
     while(1)
     {
       unsigned long sensor_timestamp;
       int new_data = 0;
       
 
-      /* parsing serial input deleted */
-    
-    app_config_get_clock_ms(&timestamp);     /* Compass reads are handled by scheduler. */
-
 #ifdef COMPASS_ENABLED
-        /* We're not using a data ready interrupt for the compass, so we'll
-         * make our compass reads timer-based instead.
-         */
-        if ((timestamp > hal.next_compass_ms) && !hal.lp_accel_mode &&
+        if (!hal.lp_accel_mode &&
             hal.new_gyro && (hal.sensors & COMPASS_ON)) {
-            hal.next_compass_ms = timestamp + COMPASS_READ_MS;
-            new_compass = 1;
+             
+            new_compass = mpu_int_checkNewCompassReadingTimer();
+                     
         }
 #endif
-        /* Temperature data doesn't need to be read with every gyro sample.
-         * Let's make them timer-based like the compass reads.
-         */
-        if (timestamp > hal.next_temp_ms) {
-            hal.next_temp_ms = timestamp + TEMP_READ_MS;
-            new_temp = 1;
-        }
+
+        new_temp = mpu_int_checkNewTemperatureReadingTimer();
+        
+        
 
       if (hal.sensors || hal.new_gyro) 
       {
