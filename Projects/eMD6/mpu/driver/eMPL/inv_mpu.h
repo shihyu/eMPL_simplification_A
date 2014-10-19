@@ -39,6 +39,8 @@ struct int_param_s {
     void (*cb)(volatile void*);
     void *arg;
 #elif defined EMPL_TARGET_STM32L
+    void (*cb)(void); 
+#elif defined USE_MPU_CONFIG_FILE
     void (*cb)(void);
 #endif
 };

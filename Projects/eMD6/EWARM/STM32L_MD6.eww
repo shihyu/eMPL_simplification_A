@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\..\..\eMD6_reorganized\eMD6_reorganized.ewp</path>
+    <path>$WS_DIR$\..\..\eMD6_stm32f1\eMD6_stmf1.ewp</path>
   </project>
   <project>
     <path>$WS_DIR$\Project.ewp</path>

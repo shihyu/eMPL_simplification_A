@@ -3,8 +3,8 @@
 <Workspace>
   <ConfigDictionary>
     <CurrentConfigs>
-      <Project>eMD6_reorganized/Debug</Project>
       <Project>Project/STM32L-DISCOVERY</Project>
+      <Project>eMD6_stmf1/Debug</Project>
     </CurrentConfigs>
     <CurrentProj>Project</CurrentProj>
     <OverviewSelected>0</OverviewSelected>
@@ -26,6 +26,16 @@
         <ColumnWidth3>92</ColumnWidth3>
       </Build>
       <TerminalIO/>
+      <Find-in-Files>
+        <ColumnWidth0>569</ColumnWidth0>
+        <ColumnWidth1>94</ColumnWidth1>
+        <ColumnWidth2>854</ColumnWidth2>
+        <ColumnWidth3>379</ColumnWidth3>
+      </Find-in-Files>
+      <Debug-Log>
+        <ColumnWidth0>23</ColumnWidth0>
+        <ColumnWidth1>1858</ColumnWidth1>
+      </Debug-Log>
     </Static>
     <Windows>
       <Wnd0>
@@ -42,14 +52,19 @@
                 <ExpandedNode>Project</ExpandedNode>
                 <ExpandedNode>Project/Peripherals</ExpandedNode>
                 <ExpandedNode>Project/User</ExpandedNode>
+                <ExpandedNode>Project/mpu</ExpandedNode>
+                <ExpandedNode>Project/mpu/driver</ExpandedNode>
+                <ExpandedNode>Project/mpu/driver/eMPL</ExpandedNode>
+                <ExpandedNode>Project/mpu/eMPL-hal</ExpandedNode>
                 <ExpandedNode>Project/mpu_int</ExpandedNode>
+                <ExpandedNode>eMD6_stmf1</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
       </Wnd0>
-      <Wnd2>
+      <Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-21928-22043</Identity>
@@ -57,9 +72,21 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
+          <Tab>
+            <Identity>TabID-7376-2034</Identity>
+            <TabName>Find in Files</TabName>
+            <Factory>Find-in-Files</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-25862-2915</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
         </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd2>
+        <SelectedTab>2</SelectedTab>
+      </Wnd1>
     </Windows>
     <Editor>
       <Pane>
@@ -96,9 +123,45 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>17</YPos2>
+          <YPos2>15</YPos2>
           <SelStart2>628</SelStart2>
           <SelEnd2>628</SelEnd2>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\..\..\eMD6_stm32f1\main.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>0</YPos2>
+          <SelStart2>33</SelStart2>
+          <SelEnd2>33</SelEnd2>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\..\mpu\driver\eMPL\inv_mpu.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>15</YPos2>
+          <SelStart2>1307</SelStart2>
+          <SelEnd2>1307</SelEnd2>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\..\mpu\driver\eMPL\inv_mpu.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>30</YPos2>
+          <SelStart2>1302</SelStart2>
+          <SelEnd2>1333</SelEnd2>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
@@ -111,7 +174,7 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>13</YPos2>
+          <YPos2>0</YPos2>
           <SelStart2>1748</SelStart2>
           <SelEnd2>1748</SelEnd2>
         </Tab>
@@ -131,12 +194,12 @@
       </Pane>
       <Sizes>
         <Pane>
-          <X>500000</X>
-          <Y>500000</Y>
+          <X>624025</X>
+          <Y>1000000</Y>
         </Pane>
         <Pane>
-          <X>500000</X>
-          <Y>500000</Y>
+          <X>375974</X>
+          <Y>1000000</Y>
         </Pane>
       </Sizes>
       <SplitMode>4</SplitMode>
@@ -150,9 +213,6 @@
             </Toolbar-02E58B68>
           </Sizes>
         </Row0>
-        <Row1>
-          <Sizes/>
-        </Row1>
       </Top>
       <Left>
         <Row0>
@@ -184,7 +244,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd1>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -199,7 +259,7 @@
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>177462</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd1>
           </Sizes>
         </Row0>
       </Bottom>

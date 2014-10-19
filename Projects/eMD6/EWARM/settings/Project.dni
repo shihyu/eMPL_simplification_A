@@ -14,7 +14,7 @@ ByteLimit=50
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Checksum=-199227299
+Checksum=1855617249
 =======
 Checksum=838925239
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
@@ -55,7 +55,7 @@ ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [stlink]
-stlinkserialNo=2798FD0D
+stlinkserialNo=D3980414
 stlinkfoundProbes=
 [CodeCoverage]
 Enabled=_ 0
@@ -99,6 +99,9 @@ Count=1
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 A0=_ "../mpl/compass_vec_cal.c" ""
 A1=_ "../mpl/fusion_9axis.c" ""
@@ -114,6 +117,3 @@ Mode=3
 Graph=0
 Symbiont=0
 Exclusions=
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""

@@ -1,11 +1,10 @@
-"C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6_reorganized\main.c"
+"C:\Users\Jerzy\Documents\Politechnika\Magisterka\workspace_eMPL\simplification_A\eMPL_simplification_A\Projects\eMD6_stm32f1\main.c"
 -std=c99
 -ferror-limit=100
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
--DNDEBUG=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -143,7 +142,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
 -D__INTPTR_SIZE_PREFIX__="l"
 -D__JMP_BUF_ELEMENT_TYPE__=unsigned long long int
 -D__JMP_BUF_NUM_ELEMENTS__=8
--D__TID__=0xcf10
+-D__TID__=0xcf60
 -D__VER__=7030001
 -D__BUILD_NUMBER__=7746
 -D__IAR_SYSTEMS_ICC__=8
@@ -175,7 +174,17 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
 -D__MULTIPLE_INHERITANCE__=1
 -D__AAPCS__=1
 -D__ARM4TM__=4
--D__CORE__=__ARM4TM__
+-D__ARM5TM__=5
+-D__ARM5T__=5
+-D__ARM5__=5
+-D__ARM6M__=11
+-D__ARM6SM__=12
+-D__ARM6T2__=6
+-D__ARM6__=6
+-D__ARM7M__=7
+-D__ARM7__=7
+-D__ARM_PROFILE_M__=1
+-D__CORE__=__ARM7M__
 -D__CPU_MODE__=1
 -D__ICCARM__=1
 -D__INTERWORKING__=1
@@ -187,8 +196,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=594176
 -D_GOANNA=1
--D__DATE__="Oct 15 2014"
--D__TIME__="10:58:47"
+-D__DATE__="Oct 19 2014"
+-D__TIME__="14:25:32"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
@@ -215,8 +224,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
--D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\INC\c\DLib_Config_Normal.h"
--D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 7.0\\arm\\INC\\c\\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\INC\c\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 7.0\\arm\\INC\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM"
 -D_VA_DEFINED=
 -D__CODE_MEMORY_LIST1__()=__CODE_MEM_HELPER1__(__code, 0 )

@@ -178,7 +178,6 @@
           <state>MPL_LOG_NDEBUG=1</state>
           <state>EMPL</state>
           <state>MPU9250</state>
-          <state>EMPL_TARGET_STM32L</state>
           <state>USE_MPU_CONFIG_FILE</state>
         </option>
         <option>

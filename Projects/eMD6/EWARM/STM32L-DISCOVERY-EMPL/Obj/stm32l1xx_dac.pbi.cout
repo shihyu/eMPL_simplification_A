@@ -71,7 +71,6 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -DMPL_LOG_NDEBUG=1
 -DEMPL=1
 -DMPU9250=1
--DEMPL_TARGET_STM32L=1
 -DUSE_MPU_CONFIG_FILE=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
@@ -264,8 +263,8 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=594176
 -D_GOANNA=1
--D__DATE__="Oct 15 2014"
--D__TIME__="14:26:50"
+-D__DATE__="Oct 19 2014"
+-D__TIME__="14:29:46"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

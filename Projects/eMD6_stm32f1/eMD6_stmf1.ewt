@@ -170,12 +170,9 @@
       </data>
     </settings>
   </configuration>
-  <group>
-    <name>src</name>
-    <file>
-      <name>$PROJ_DIR$\..\eMD6\src\main.c</name>
-    </file>
-  </group>
+  <file>
+    <name>$PROJ_DIR$\main.c</name>
+  </file>
 </project>
 
 

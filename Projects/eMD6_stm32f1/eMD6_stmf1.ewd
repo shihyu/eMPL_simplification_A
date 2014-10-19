@@ -45,7 +45,7 @@
         </option>
         <option>
           <name>MemFile</name>
-          <state></state>
+          <state>$TOOLKIT_DIR$\CONFIG\debugger\ST\STM32F103xB.ddf</state>
         </option>
         <option>
           <name>RunToEnable</name>
@@ -117,7 +117,7 @@
         </option>
         <option>
           <name>FlashLoadersV3</name>
-          <state>$TOOLKIT_DIR$\config\flashloader\</state>
+          <state>$TOOLKIT_DIR$\config\flashloader\ST\FlashSTM32F10xxB.board</state>
         </option>
         <option>
           <name>OCImagesSuppressCheck1</name>
@@ -1438,7 +1438,7 @@
         </option>
         <option>
           <name>OCLastSavedByProductVersion</name>
-          <state>7.30.1.7765</state>
+          <state></state>
         </option>
         <option>
           <name>OCDownloadAttachToProgram</name>
@@ -1466,7 +1466,7 @@
         </option>
         <option>
           <name>FlashLoadersV3</name>
-          <state>$TOOLKIT_DIR$\config\flashloader\</state>
+          <state></state>
         </option>
         <option>
           <name>OCImagesSuppressCheck1</name>
