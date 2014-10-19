@@ -3,17 +3,14 @@
 #ifndef _MPU_INT_H_
 #define _MPU_INT_H_
 
+#include "stdint.h"
+
+#define MPU_INT_DEFAULT_MPU_HZ  (100)
+#define MPU_INT_TEMP_READ_MS    (500)
+#define MPU_INT_COMPASS_READ_MS (100)
 
 
 
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 /* Platform-specific information. Kinda like a boardfile. */
 struct platform_data_s {
     signed char orientation[9];
@@ -66,16 +63,5 @@ uint8_t mpu_int_dmp_setup(void);
 uint8_t mpu_int_checkNewCompassReadingTimer(uint32_t timestamp);
 uint8_t mpu_int_checkNewTemperatureReadingTimer(uint32_t timestamp);
 void mpu_int_check_timers_flags(uint8_t * new_temp_flag, uint8_t * new_compass_flag);
-=======
->>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
-=======
->>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
-=======
->>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
-=======
->>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
-=======
->>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
-
 
 #endif  /* #ifndef _MPU_CONFIG_H_ */

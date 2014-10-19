@@ -14,7 +14,7 @@ ByteLimit=50
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Checksum=-1565721204
+Checksum=-1093628091
 =======
 Checksum=838925239
 >>>>>>> parent of ca2e15e... Added integration of mpu functionality in mpu_inv
@@ -55,7 +55,7 @@ ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [stlink]
-stlinkserialNo=2798FD0D
+stlinkserialNo=D3980414
 stlinkfoundProbes=
 [CodeCoverage]
 Enabled=_ 0
@@ -65,14 +65,6 @@ Fmt1=short[3]	3	0
 [watch_formats]
 Fmt0={W}0:compass_short	3	3
 Fmt1={W}0:fifo_count	4	0
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=3
-Graph=0
-Symbiont=0
-Exclusions=
 [Trace2]
 Enabled=0
 ShowSource=0
@@ -101,7 +93,7 @@ SumSortOrder=0
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\main.c}.52.1" 0 0 1 "" 0 "" 0
+Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\main.c}.385.1" 0 0 1 "" 0 "" 0
 Count=1
 [Log file]
 LoggingEnabled=_ 0
@@ -117,3 +109,11 @@ A2=_ "../mpl/mag_disturb.c" ""
 A3=_ "../mpl/quaternion_supervisor.c" ""
 Count=4
 SuppressDialog=1
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
