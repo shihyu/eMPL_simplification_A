@@ -2,69 +2,54 @@
 
 <Workspace>
   <ConfigDictionary>
-    <CurrentConfigs>
-      <Project>Project/STM32L-DISCOVERY</Project>
-      <Project>eMD6_stmf1/Debug</Project>
-    </CurrentConfigs>
-    <CurrentProj>Project</CurrentProj>
-    <OverviewSelected>0</OverviewSelected>
-  </ConfigDictionary>
+    
+    
+    
+  <CurrentConfigs><Project>Project/STM32L-DISCOVERY</Project><Project>eMD6_stmf1/Debug</Project></CurrentConfigs><CurrentProj>eMD6_stmf1</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>287</Column0>
-          <Column1>27</Column1>
-          <Column2>27</Column2>
-          <Column3>27</Column3>
-        </ColumnWidths>
+          
+          
+          
+          
+        <Column0>190</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
-        <ColumnWidth0>26</ColumnWidth0>
-        <ColumnWidth1>800</ColumnWidth1>
-        <ColumnWidth2>371</ColumnWidth2>
-        <ColumnWidth3>92</ColumnWidth3>
-      </Build>
+        
+        
+        
+        
+      <ColumnWidth0>26</ColumnWidth0><ColumnWidth1>800</ColumnWidth1><ColumnWidth2>641</ColumnWidth2><ColumnWidth3>92</ColumnWidth3></Build>
       <TerminalIO/>
       <Find-in-Files>
-        <ColumnWidth0>569</ColumnWidth0>
-        <ColumnWidth1>94</ColumnWidth1>
-        <ColumnWidth2>854</ColumnWidth2>
-        <ColumnWidth3>379</ColumnWidth3>
-      </Find-in-Files>
+        
+        
+        
+        
+      <ColumnWidth0>1264</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>854</ColumnWidth2><ColumnWidth3>379</ColumnWidth3></Find-in-Files>
       <Debug-Log>
-        <ColumnWidth0>23</ColumnWidth0>
-        <ColumnWidth1>1858</ColumnWidth1>
-      </Debug-Log>
-    </Static>
+        
+        
+      <ColumnWidth0>23</ColumnWidth0><ColumnWidth1>1858</ColumnWidth1></Debug-Log>
+    <Select-Ambiguous-Definitions><ColumnWidth0>1150</ColumnWidth0><ColumnWidth1>83</ColumnWidth1><ColumnWidth2>1006</ColumnWidth2></Select-Ambiguous-Definitions><Locals><PreferedWindows><Position>4</Position><ScreenPosX>-763</ScreenPosX><ScreenPosY>234</ScreenPosY><Windows/></PreferedWindows></Locals></Static>
     <Windows>
-      <Wnd0>
+      
+      
+    <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-31087-20234</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
-              <NodeDict>
-                <ExpandedNode>&lt;ws&gt;</ExpandedNode>
-                <ExpandedNode>&lt;ws&gt;/Project</ExpandedNode>
-                <ExpandedNode>&lt;ws&gt;/eMD6_reorganized</ExpandedNode>
-                <ExpandedNode>Project</ExpandedNode>
-                <ExpandedNode>Project/Peripherals</ExpandedNode>
-                <ExpandedNode>Project/User</ExpandedNode>
-                <ExpandedNode>Project/mpu</ExpandedNode>
-                <ExpandedNode>Project/mpu/driver</ExpandedNode>
-                <ExpandedNode>Project/mpu/driver/eMPL</ExpandedNode>
-                <ExpandedNode>Project/mpu/eMPL-hal</ExpandedNode>
-                <ExpandedNode>Project/mpu_int</ExpandedNode>
-                <ExpandedNode>eMD6_stmf1</ExpandedNode>
-              </NodeDict>
-            </Session>
+              
+            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/Peripherals</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/User</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_reorganized</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/Libraries</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/hardware</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src/app_config</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src/lib_config</ExpandedNode><ExpandedNode>Project</ExpandedNode><ExpandedNode>Project/CMSIS</ExpandedNode><ExpandedNode>Project/Output</ExpandedNode><ExpandedNode>Project/User</ExpandedNode><ExpandedNode>eMD6_stmf1</ExpandedNode><ExpandedNode>eMD6_stmf1/Libraries</ExpandedNode><ExpandedNode>eMD6_stmf1/Libraries/StartupFiles</ExpandedNode><ExpandedNode>eMD6_stmf1/hardware</ExpandedNode><ExpandedNode>eMD6_stmf1/libs</ExpandedNode><ExpandedNode>eMD6_stmf1/src</ExpandedNode><ExpandedNode>eMD6_stmf1/src/app_config</ExpandedNode><ExpandedNode>eMD6_stmf1/src/lib_config</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd0>
-      <Wnd1>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
         <Tabs>
           <Tab>
             <Identity>TabID-21928-22043</Identity>
@@ -84,189 +69,23 @@
             <Factory>Debug-Log</Factory>
             <Session/>
           </Tab>
-        </Tabs>
-        <SelectedTab>2</SelectedTab>
-      </Wnd1>
-    </Windows>
+        <Tab><Identity>TabID-15323-17405</Identity><TabName>Ambiguous Definitions</TabName><Factory>Select-Ambiguous-Definitions</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>1</SelectedTab></Wnd3></Windows>
     <Editor>
-      <Pane>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\src\main.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>80</YPos2>
-          <SelStart2>2664</SelStart2>
-          <SelEnd2>2664</SelEnd2>
-        </Tab>
-        <ActiveTab>0</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\inc\app_config.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>727</SelStart2>
-          <SelEnd2>750</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\inc\app_config.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>15</YPos2>
-          <SelStart2>628</SelStart2>
-          <SelEnd2>628</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\..\eMD6_stm32f1\main.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>33</SelStart2>
-          <SelEnd2>33</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\mpu\driver\eMPL\inv_mpu.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>15</YPos2>
-          <SelStart2>1307</SelStart2>
-          <SelEnd2>1307</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\mpu\driver\eMPL\inv_mpu.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>30</YPos2>
-          <SelStart2>1302</SelStart2>
-          <SelEnd2>1333</SelEnd2>
-        </Tab>
-      </Pane>
-      <ActivePane>0</ActivePane>
-      <Pane>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\mpu_int\mpu_int.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>1748</SelStart2>
-          <SelEnd2>1748</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\mpu_int\mpu_int.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>16</YPos2>
-          <SelStart2>614</SelStart2>
-          <SelEnd2>614</SelEnd2>
-        </Tab>
-        <ActiveTab>1</ActiveTab>
-      </Pane>
-      <Sizes>
-        <Pane>
-          <X>624025</X>
-          <Y>1000000</Y>
-        </Pane>
-        <Pane>
-          <X>375974</X>
-          <Y>1000000</Y>
-        </Pane>
-      </Sizes>
-      <SplitMode>4</SplitMode>
-    </Editor>
+      
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>397</SelStart2><SelEnd2>397</SelEnd2></Tab><ActiveTab>0</ActiveTab></Pane><Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c_stm32f103.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>313</YPos2><SelStart2>4649</SelStart2><SelEnd2>4674</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>176</YPos2><SelStart2>2095</SelStart2><SelEnd2>2111</SelEnd2></Tab></Pane><ActivePane>1</ActivePane><Sizes><Pane><X>331093</X><Y>1000000</Y></Pane><Pane><X>668906</X><Y>1000000</Y></Pane></Sizes><SplitMode>4</SplitMode></Editor>
     <Positions>
-      <Top>
-        <Row0>
-          <Sizes>
-            <Toolbar-02E58B68>
-              <key>iaridepm.enu1</key>
-            </Toolbar-02E58B68>
-          </Sizes>
-        </Row0>
-      </Top>
-      <Left>
-        <Row0>
-          <Sizes>
-            <Wnd0>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>728</Bottom>
-                <Right>378</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>200</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>104167</sizeHorzCX>
-                <sizeHorzCY>177462</sizeHorzCY>
-                <sizeVertCX>197917</sizeVertCX>
-                <sizeVertCY>647737</sizeVertCY>
-              </Rect>
-            </Wnd0>
-          </Sizes>
-        </Row0>
-      </Left>
-      <Right>
-        <Row0>
-          <Sizes/>
-        </Row0>
-      </Right>
-      <Bottom>
-        <Row0>
-          <Sizes>
-            <Wnd1>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>354</Bottom>
-                <Right>1922</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>1924</xscreen>
-                <yscreen>356</yscreen>
-                <sizeHorzCX>1002083</sizeHorzCX>
-                <sizeHorzCY>315883</sizeHorzCY>
-                <sizeVertCX>104167</sizeVertCX>
-                <sizeVertCY>177462</sizeVertCY>
-              </Rect>
-            </Wnd1>
-          </Sizes>
-        </Row0>
-      </Bottom>
-      <Float>
-        <Sizes/>
-      </Float>
-    </Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-04628B68><key>iaridepm.enu1</key></Toolbar-04628B68></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>740</Bottom><Right>281</Right><x>-2</x><y>-2</y><xscreen>157</xscreen><yscreen>200</yscreen><sizeHorzCX>81771</sizeHorzCX><sizeHorzCY>177462</sizeHorzCY><sizeVertCX>147396</sizeVertCX><sizeVertCY>658385</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>342</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>344</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>305235</sizeHorzCY><sizeVertCX>81771</sizeVertCX><sizeVertCY>177462</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
