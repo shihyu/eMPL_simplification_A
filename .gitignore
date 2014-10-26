@@ -41,3 +41,13 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# IAR files
+# =========================
+
+*.ewt
+*.ewp
+*.ewd
+*.dep
+
