@@ -5,7 +5,7 @@
     
     
     
-  <CurrentConfigs><Project>Project/STM32L-DISCOVERY</Project><Project>eMD6_stmf1/Debug</Project></CurrentConfigs><CurrentProj>eMD6_stmf1</CurrentProj><OverviewSelected>1</OverviewSelected></ConfigDictionary>
+  <CurrentConfigs><Project>eMD6_stmf1/Debug</Project><Project>Project/STM32L-DISCOVERY</Project></CurrentConfigs><CurrentProj>eMD6_stmf1</CurrentProj><OverviewSelected>0</OverviewSelected></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -14,7 +14,7 @@
           
           
           
-        <Column0>190</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>207</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -37,7 +37,7 @@
     <Windows>
       
       
-    <Wnd2>
+    <Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-31087-20234</Identity>
@@ -45,11 +45,11 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/Peripherals</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/User</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_reorganized</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/Libraries</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/hardware</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src/app_config</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_stmf1/src/lib_config</ExpandedNode><ExpandedNode>Project</ExpandedNode><ExpandedNode>Project/CMSIS</ExpandedNode><ExpandedNode>Project/Output</ExpandedNode><ExpandedNode>Project/User</ExpandedNode><ExpandedNode>eMD6_stmf1</ExpandedNode><ExpandedNode>eMD6_stmf1/Libraries</ExpandedNode><ExpandedNode>eMD6_stmf1/Libraries/StartupFiles</ExpandedNode><ExpandedNode>eMD6_stmf1/hardware</ExpandedNode><ExpandedNode>eMD6_stmf1/libs</ExpandedNode><ExpandedNode>eMD6_stmf1/src</ExpandedNode><ExpandedNode>eMD6_stmf1/src/app_config</ExpandedNode><ExpandedNode>eMD6_stmf1/src/lib_config</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>&lt;ws&gt;</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/Peripherals</ExpandedNode><ExpandedNode>&lt;ws&gt;/Project/User</ExpandedNode><ExpandedNode>&lt;ws&gt;/eMD6_reorganized</ExpandedNode><ExpandedNode>Project</ExpandedNode><ExpandedNode>Project/CMSIS</ExpandedNode><ExpandedNode>Project/Output</ExpandedNode><ExpandedNode>Project/User</ExpandedNode><ExpandedNode>eMD6_stmf1</ExpandedNode><ExpandedNode>eMD6_stmf1/hardware</ExpandedNode><ExpandedNode>eMD6_stmf1/libs</ExpandedNode><ExpandedNode>eMD6_stmf1/src</ExpandedNode><ExpandedNode>eMD6_stmf1/src/app_config</ExpandedNode><ExpandedNode>eMD6_stmf1/src/lib_config</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd3>
         <Tabs>
           <Tab>
             <Identity>TabID-21928-22043</Identity>
@@ -71,21 +71,21 @@
           </Tab>
         <Tab><Identity>TabID-15323-17405</Identity><TabName>Ambiguous Definitions</TabName><Factory>Select-Ambiguous-Definitions</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>1</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
       
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>397</SelStart2><SelEnd2>397</SelEnd2></Tab><ActiveTab>0</ActiveTab></Pane><Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c_stm32f103.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>313</YPos2><SelStart2>4649</SelStart2><SelEnd2>4674</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>176</YPos2><SelStart2>2095</SelStart2><SelEnd2>2111</SelEnd2></Tab></Pane><ActivePane>1</ActivePane><Sizes><Pane><X>331093</X><Y>1000000</Y></Pane><Pane><X>668906</X><Y>1000000</Y></Pane></Sizes><SplitMode>4</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>93</YPos2><SelStart2>2971</SelStart2><SelEnd2>2971</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>247</YPos2><SelStart2>9667</SelStart2><SelEnd2>9667</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1080</YPos2><SelStart2>38222</SelStart2><SelEnd2>38222</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include\core_cm3.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1538</YPos2><SelStart2>97854</SelStart2><SelEnd2>97854</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\leds.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>67</YPos2><SelStart2>2178</SelStart2><SelEnd2>2178</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>238</YPos2><SelStart2>8124</SelStart2><SelEnd2>8124</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>624</SelStart2><SelEnd2>624</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\src\mpu_int\mpu_int.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>723</SelStart2><SelEnd2>723</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\src\mpu\driver\eMPL\inv_mpu.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>697</YPos2><SelStart2>21238</SelStart2><SelEnd2>21238</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>78</YPos2><SelStart2>2609</SelStart2><SelEnd2>2609</SelEnd2></Tab><ActiveTab>9</ActiveTab></Pane><Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\peripheral\uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>441</SelStart2><SelEnd2>441</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\peripheral\uart_stm32l1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>852</SelStart2><SelEnd2>852</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\peripheral\i2c_stm32l1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\peripheral\exti.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\peripheral\exti_stm32l1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\exti_stm32f103.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>451</SelStart2><SelEnd2>451</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\i2c_stm32f103.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>132</YPos2><SelStart2>5789</SelStart2><SelEnd2>5789</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1144</YPos2><SelStart2>39408</SelStart2><SelEnd2>39408</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\eMD6_stm32f1\hardware\uart_stm32f103.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><ActiveTab>8</ActiveTab></Pane><ActivePane>1</ActivePane><Sizes><Pane><X>477092</X><Y>1000000</Y></Pane><Pane><X>522907</X><Y>1000000</Y></Pane></Sizes><SplitMode>4</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-04628B68><key>iaridepm.enu1</key></Toolbar-04628B68></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>740</Bottom><Right>281</Right><x>-2</x><y>-2</y><xscreen>157</xscreen><yscreen>200</yscreen><sizeHorzCX>81771</sizeHorzCX><sizeHorzCY>177462</sizeHorzCY><sizeVertCX>147396</sizeVertCX><sizeVertCY>658385</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>342</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>344</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>305235</sizeHorzCY><sizeVertCX>81771</sizeVertCX><sizeVertCY>177462</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-028D8B68><key>iaridepm.enu1</key></Toolbar-028D8B68></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>740</Bottom><Right>281</Right><x>-2</x><y>-2</y><xscreen>157</xscreen><yscreen>200</yscreen><sizeHorzCX>81771</sizeHorzCX><sizeHorzCY>177462</sizeHorzCY><sizeVertCX>147396</sizeVertCX><sizeVertCY>658385</sizeVertCY></Rect></Wnd1></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>342</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>344</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>305235</sizeHorzCY><sizeVertCX>81771</sizeVertCX><sizeVertCY>177462</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

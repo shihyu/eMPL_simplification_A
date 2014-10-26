@@ -55,7 +55,7 @@ ITMportsTermIO=0
 ITMportsLogFile=0
 ITMlogFile=$PROJ_DIR$\ITM.log
 [stlink]
-stlinkserialNo=D3980414
+stlinkserialNo=2798FD0D
 stlinkfoundProbes=
 [CodeCoverage]
 Enabled=_ 0
@@ -106,7 +106,7 @@ Exclusions=
 mode=0
 [Breakpoints2]
 Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\main.c}.342.3" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\eMD6_stm32f1\main.c}.2.1" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\eMD6_stm32f1\main.c}.2.1" 0 0 1 "" 0 "" 0
 Count=2
 [Aliases]
 A0=_ "../mpl/compass_vec_cal.c" ""

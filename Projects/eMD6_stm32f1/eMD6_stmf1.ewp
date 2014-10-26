@@ -174,6 +174,11 @@
           <name>CCDefines</name>
           <state>STM32F10X_MD</state>
           <state>USE_STDPERIPH_DRIVER</state>
+          <state>USE_DMP</state>
+          <state>MPL_LOG_NDEBUG=1</state>
+          <state>EMPL</state>
+          <state>MPU9250</state>
+          <state>USE_MPU_CONFIG_FILE</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -304,8 +309,17 @@
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$</state>
           <state>$PROJ_DIR$\hardware</state>
+          <state>$PROJ_DIR$\src</state>
           <state>$PROJ_DIR$\src\lib_config</state>
           <state>$PROJ_DIR$\src\app_config</state>
+          <state>$PROJ_DIR$\src\mpu\mpu_config</state>
+          <state>$PROJ_DIR$\src\mpu\mpl</state>
+          <state>$PROJ_DIR$\src\mpu\driver\include</state>
+          <state>$PROJ_DIR$\src\mpu\driver\eMPL</state>
+          <state>$PROJ_DIR$\src\mpu\driver\packet_log</state>
+          <state>$PROJ_DIR$\src\mpu\mllite</state>
+          <state>$PROJ_DIR$\src\mpu\eMPL-hal</state>
+          <state>$PROJ_DIR$\src\mpu_int</state>
           <state>$PROJ_DIR$\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x</state>
           <state>$PROJ_DIR$\Libraries\STM32F10x_StdPeriph_Driver\inc</state>
         </option>
@@ -1899,9 +1913,6 @@
       <name>$PROJ_DIR$\hardware\exti_stm32f103.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\hardware\hardware.h</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\hardware\i2c.h</name>
     </file>
     <file>
@@ -2108,8 +2119,188 @@
         <name>$PROJ_DIR$\src\lib_config\stm32f10x_it.h</name>
       </file>
     </group>
+    <group>
+      <name>mpu</name>
+      <group>
+        <name>driver</name>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\dmpKey.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\dmpmap.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\inv_mpu.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\inv_mpu.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\inv_mpu_dmp_motion_driver.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\eMPL\inv_mpu_dmp_motion_driver.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\log.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\mlinclude.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\mlmath.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\mlos.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\mltypes.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\mpu.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\packet_log\packet.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\packet_log\packet.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\driver\include\stdint_invensense.h</name>
+        </file>
+      </group>
+      <group>
+        <name>eMPL-hal</name>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\eMPL-hal\eMPL_outputs.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\eMPL-hal\eMPL_outputs.h</name>
+        </file>
+      </group>
+      <group>
+        <name>mllite</name>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\data_builder.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\data_builder.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\hal_outputs.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\hal_outputs.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\invensense.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\message_layer.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\message_layer.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\ml_math_func.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\ml_math_func.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\mlmath.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\mpl.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\mpl.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\results_holder.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\results_holder.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\start_manager.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\start_manager.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\storage_manager.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mllite\storage_manager.h</name>
+        </file>
+      </group>
+      <group>
+        <name>mpl</name>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\accel_auto_cal.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\compass_vec_cal.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\fast_no_motion.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\fusion_9axis.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\gyro_tc.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\heading_from_gyro.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\inv_math.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\invensense_adv.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\libmpllib.a</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\mag_disturb.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\motion_no_motion.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\no_gyro_fusion.h</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpl\quaternion_supervisor.h</name>
+        </file>
+      </group>
+      <group>
+        <name>mpu_config</name>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpu_config\mpu_config.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\src\mpu\mpu_config\mpu_config.h</name>
+        </file>
+      </group>
+    </group>
+    <group>
+      <name>mpu_int</name>
+      <file>
+        <name>$PROJ_DIR$\src\mpu_int\mpu_int.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\src\mpu_int\mpu_int.h</name>
+      </file>
+    </group>
     <file>
       <name>$PROJ_DIR$\src\main.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.h</name>
     </file>
   </group>
 </project>
